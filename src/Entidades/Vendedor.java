@@ -20,16 +20,27 @@ public class Vendedor {
         loja.add(item);
     }
 
+    /**
+     * Método utilizado para adicionar items a loja de venda
+     * @param itens Lista geral de itens
+     */
     public void addItens(List<? extends ItemHeroi> itens) {
         loja.addAll(itens);
     }
 
+    /**
+     * Metodo que remove um item da loja após ele ser vendido
+     * @param indiceItem Valor que identifica a posição do item na lista/loja
+     */
     public void removerItemVendido(int indiceItem) {
         if (indiceItem >= 0 && indiceItem < loja.size()) {
             loja.remove(indiceItem);
         }
     }
 
+    /**
+     * Metodo que apresenta a lista/loja ao jogador
+     */
     public void imprimirLoja() {
         System.out.println("Itens disponíveis na loja:");
         for (int i = 0; i < loja.size(); i++) {
@@ -39,6 +50,12 @@ public class Vendedor {
         }
     }
 
+    /**
+     * Método que realiza a venda dos items na loja
+     * @param heroi Avatar configurado pelo jogador
+     * @param indiceItem Valor que identifica a posição do item na lista/loja
+     * @return Retorna se o item pode e foi adiquirido ou não pelo heroi.
+     */
     public boolean vender(Heroi heroi, int indiceItem) {
         if (indiceItem < 0 || indiceItem >= loja.size()) {
             System.out.println("Item inválido.");
@@ -78,11 +95,15 @@ public class Vendedor {
         return nome;
     }
 
+    /**
+     * Método que configura a interação/acesso ao vendedor
+     * @param heroi Avatar criado pelo jogador
+     */
     public void interagir(Heroi heroi) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
 
-            System.out.println("Bem-vindo à loja de " + nome + "! O que você gostaria de fazer?");
+            System.out.println("Bem-vindo à loja de " + nome);
             System.out.println("-------------------------------\n");
             imprimirLoja();
             System.out.println("-------------------------------\n");

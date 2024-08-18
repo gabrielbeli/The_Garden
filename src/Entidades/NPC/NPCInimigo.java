@@ -9,10 +9,10 @@ public class NPCInimigo extends NPC {
     }
 
     /**
-     * metodo que calcula a força do inimigo com contexto individual ou acompanhado
-     * @param heroi
-     * @param temCompanheiro
-     * @return força base do inimigo
+     * Método que calcula a força do inimigo com contexto individual ou acompanhado
+     * @param heroi Avatar criado pelo jogador
+     * @param temCompanheiro Verificação se o heroi está sozinho ou acompanhado
+     * @return Retorna a força base do inimigo
      */
     public int calcularForca(Heroi heroi, boolean temCompanheiro) {
         int forcaBase = heroi.getForca();
@@ -25,7 +25,7 @@ public class NPCInimigo extends NPC {
 
     /**
      * metodo que subscreve o recebimento de dano
-     * @param dano
+     * @param dano Valor de dano que o heroi ou companheiros causaram
      */
     @Override
     public void receberDano(int dano) {
@@ -34,8 +34,8 @@ public class NPCInimigo extends NPC {
     }
 
     /**
-     * metodo que subcreve o calculo de dano com base na força
-     * @return força
+     * Metodo que subcreve o calculo de dano com base na força
+     * @return Valor da força do inimigo
      */
     @Override
     public int calcularDano() {

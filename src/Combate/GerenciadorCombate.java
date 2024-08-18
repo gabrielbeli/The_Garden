@@ -16,6 +16,13 @@ public class GerenciadorCombate {
         this.random = new Random();
     }
 
+    /**
+     * Método para realizar a dinamica de combate entre herois e inimigos
+     * @param heroi Avatar criado pelo jogador
+     * @param companheiros NPCs configurados pela narrativa que acompanham o heroi
+     * @param inimigo NPCs configurados para antagonizar a narrativa do heroi
+     * @return Retorna se heroi venceu ou perdeu o combate
+     */
     public boolean realizarCombate(Heroi heroi, List<NPCCompanheiro> companheiros, NPCInimigo inimigo) {
         boolean inimigoDerrotado = false;
 
@@ -66,6 +73,12 @@ public class GerenciadorCombate {
         return heroi.getVidaAtual() > 0;
     }
 
+    /**
+     * Método utilizado para informar o status de vida dos personagens durante a realização do combate
+     * @param heroi Avatar criado pelo jogador
+     * @param companheiros NPCs configurados pela narrativa que acompanham o heroi
+     * @param inimigo NPCs configurados para antagoniar a narrativa do heroi
+     */
     private void exibirStatusCombate(Heroi heroi, List<NPCCompanheiro> companheiros, NPCInimigo inimigo) {
         System.out.println("\n--- Status do Combate ---");
         System.out.println("Herói: " + heroi.getNome() + " | Vida: " + heroi.getVidaAtual() + "/" + heroi.getVidaMax());
@@ -81,6 +94,12 @@ public class GerenciadorCombate {
         System.out.println("--------------------------\n");
     }
 
+    /**
+     * Método utilizado para informar o status final de vida dos personagens após a realização do combate
+     * @param heroi Avatar criado pelo jogador
+     * @param companheiros NPCs configurados pela narrativa que acompanham o heroi
+     * @param inimigo NPCs configurados para antagoniar a narrativa do heroi
+     */
     private void exibirStatusFinal(Heroi heroi, List<NPCCompanheiro> companheiros, NPCInimigo inimigo) {
         System.out.println("\n--- Status Final do Combate ---");
         System.out.println("Herói: " + heroi.getNome() + " | Vida: " + heroi.getVidaAtual() + "/" + heroi.getVidaMax() + " | Ouro: " + heroi.getOuro() + " | Experiência: " + heroi.getExperiencia());
@@ -101,6 +120,11 @@ public class GerenciadorCombate {
         System.out.println("-------------------------------\n");
     }
 
+    /**
+     * Método que cofigura o turno do heroi dentro do combate
+     * @param heroi Avatar criado eplo jogador
+     * @param inimigo NPCs configurados para antagonizar a narrativa do heroi
+     */
     private void turnoHeroi(Heroi heroi, NPCInimigo inimigo) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Escolha seu ataque:");
@@ -125,12 +149,23 @@ public class GerenciadorCombate {
         }
     }
 
+    /**
+     * Método que configura o turno dos NPCs companheiros
+     * @param companheiro NPCs configurados pela narrativa que acompanham o heroi
+     * @param inimigo NPCs configurados para antagonizar a narrativa do heroi
+     */
     private void turnoCompanheiro(NPCCompanheiro companheiro, NPCInimigo inimigo) {
         int dano = companheiro.calcularDano();
         inimigo.receberDano(dano);
         System.out.println(companheiro.getNome() + " atacou " + inimigo.getNome() + " causando " + dano + " de dano.");
     }
 
+    /**
+     * Método que configura o turno dos NPCs inimigos
+     * @param inimigo NPCs configurados para antagonizar a narrativa do heroi
+     * @param heroi Avatar criado pelo jogador
+     * @param companheiros NPCs configurados pela narrativa que acompanham o heroi
+     */
     private void turnoInimigo(NPCInimigo inimigo, Heroi heroi, List<NPCCompanheiro> companheiros) {
         boolean temCompanheiro = !companheiros.isEmpty();
         int forcaAjustada = inimigo.calcularForca(heroi, temCompanheiro);

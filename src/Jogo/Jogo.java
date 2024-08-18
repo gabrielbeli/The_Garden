@@ -173,7 +173,7 @@ public class Jogo {
                     break;
 
                 case "Clareira das Margaridas":
-                    Pocao pocao = new Pocao("Poção de Vida", 50, 10, 0);
+                    Pocao pocao = new Pocao("Poção de Vida", 50, 10, 5);
                     heroi.addAoInventario(pocao);
                     System.out.println("Você interagiu com o NPC e ganhou uma " + pocao.getNome() + "!");
                     heroi.mostrarDetalhes();

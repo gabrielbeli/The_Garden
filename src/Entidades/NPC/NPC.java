@@ -16,11 +16,19 @@ public class NPC extends Entidade {
         System.out.println("Ouro: " + ouro);
     }
 
+    /**
+     * Método que configura o recebimento de dano dos personagens
+     * @param dano
+     */
     public void receberDano(int dano) {
         this.setVidaAtual(this.getVidaAtual() - dano);
         if (this.getVidaAtual() < 0) this.setVidaAtual(0);
     }
 
+    /**
+     * Metódo que calcula o dano que os personagens cusam em combate
+     * @return Retorna o valor do dano causado
+     */
     public int calcularDano() {
         return this.getForca();
     }

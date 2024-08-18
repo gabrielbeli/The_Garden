@@ -18,6 +18,15 @@ public abstract class Entidade {
         this.categoria = null;
     }
 
+    /**
+     * Método utilizado para mostrar informações basicas do personagem, nome, vida e força...
+     */
+    public void mostrarDetalhes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Vida: " + vidaAtual + "/" + vidaMax);
+        System.out.println("Força: " + forca);
+    }
+
     public Categoria getCategoria() {
         return categoria;
     }
@@ -28,12 +37,6 @@ public abstract class Entidade {
 
     public void setForca(int forca) {
         this.forca = forca;
-    }
-
-    public void mostrarDetalhes() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Vida: " + vidaAtual + "/" + vidaMax);
-        System.out.println("Força: " + forca);
     }
 
     public void setVidaAtual(int vidaAtual) {

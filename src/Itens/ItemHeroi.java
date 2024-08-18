@@ -14,10 +14,18 @@ public abstract class ItemHeroi {
         this.heroisPermitidos = new ArrayList<>();
     }
 
+    /** Método que configura qual categoria pode utilizar o item
+     * @param tipoHeroi Categoria do heroi permitido
+     */
     public void addHeroiPermitido(String tipoHeroi) {
         heroisPermitidos.add(tipoHeroi);
     }
 
+    /**
+     * Método que verifica se uma categoria pode utilizar determinado item
+     * @param tipoHeroi categoria do heroi
+     * @return Retorna a validação/permição da categoria
+     */
     public boolean podeSerUsadoPor(String tipoHeroi) {
         return heroisPermitidos.contains(tipoHeroi);
     }

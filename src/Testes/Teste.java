@@ -49,16 +49,16 @@ public class Teste {
         vitorConquistador.setCategoria(guerreiro);
 
         // testar loja
-        //maquinaAutomatica.interagir(vitorConquistador);
+        maquinaAutomatica.interagir(vitorConquistador);
 
         // testar acesso ao iventario
-        //vitorConquistador.acessarInventario(false, inimigo);
+        vitorConquistador.acessarInventario(false, inimigo);
 
         // testar combate
-        //gerenciadorCombate.realizarCombate(vitorConquistador, companheiroList,inimigo);
+        gerenciadorCombate.realizarCombate(vitorConquistador, companheiroList,inimigo);
 
         // testar detalhes heroi
-        //vitorConquistador.mostrarDetalhes();
+        vitorConquistador.mostrarDetalhes();
 
         System.out.println("-------------------------------\n");
 

@@ -72,18 +72,6 @@ public class Sala {
         this.inimigos.addAll(inimigos);
     }
 
-    public void removerNPCComum(NPC npc) {
-        this.npcsComuns.remove(npc);
-    }
-
-    public void removerCompanheiro(NPCCompanheiro companheiro) {
-        this.companheiros.remove(companheiro);
-    }
-
-    public void removerInimigo(NPCInimigo inimigo) {
-        this.inimigos.remove(inimigo);
-    }
-
     /**
      * Método para verificar as informações da sala como: companheiros, inimigos, vendedor;
      */
@@ -133,6 +121,18 @@ public class Sala {
      */
     public boolean isExplorada() {
         return explorada;
+    }
+
+    public void removerNPCComum(NPC npc) {
+        this.npcsComuns.remove(npc);
+    }
+
+    public void removerCompanheiro(NPCCompanheiro companheiro) {
+        this.companheiros.remove(companheiro);
+    }
+
+    public void removerInimigo(NPCInimigo inimigo) {
+        this.inimigos.remove(inimigo);
     }
 
     public void setOpcoes(String[] opcoes) {

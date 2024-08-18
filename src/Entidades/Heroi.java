@@ -32,6 +32,11 @@ public abstract class Heroi extends Entidade {
         this.categoriaDefinida = false;
     }
 
+    /**
+     * Metódo que implementa a função de ataque do heroi
+     * @param inimigo NPCs configurados que antagonizam a narrativa
+     * @return Retorna os valores de dano que o heroi causou no inimigo
+     */
     public boolean atacar(NPC inimigo) {
         int dano = this.calcularDano();
         inimigo.receberDano(dano);
@@ -39,6 +44,10 @@ public abstract class Heroi extends Entidade {
         return inimigo.getVidaAtual() <= 0;
     }
 
+    /**
+     * Metódo que implementa a função de ataque especial do heroi
+     * @param inimigo NPCs configurados que antagonizam a narrativa
+     */
     public void usarAtaqueEspecial(NPC inimigo) {
         if (podeUsarAtaqueEspecial()) {
             int danoEspecial = calcularDanoEspecial();
@@ -50,18 +59,32 @@ public abstract class Heroi extends Entidade {
         }
     }
 
+    /**
+     * Método auxiliar usado na limitação de ataque especial
+     */
     public void resetarAtaqueEspecial() {
         this.ataqueEspecialUsado = false;
     }
 
+    /**
+     * Método auxiliar usado na limitação de ataque especial no combate
+     * @return Retorna o controle do ataque especial no combate
+     */
     public boolean podeUsarAtaqueEspecial() {
         return !ataqueEspecialUsado;
     }
 
+    /**
+     * Método usado para adicionar items ao inventario do heroi
+     * @param item Itens configurados para utilização no jogo
+     */
     public void addAoInventario(Consumivel item) {
         this.inventario.add(item);
     }
 
+    /**
+     * Método usado para consumir as poções que o heroi tem no inventario
+     */
     public void usarPocao() {
         if (!inventario.isEmpty()) {
             for (Consumivel item : inventario) {
@@ -77,6 +100,10 @@ public abstract class Heroi extends Entidade {
         System.out.println("Você não tem nenhuma poção no inventário!");
     }
 
+    /**
+     * Método para usar a o item magia durante o combate
+     * @param inimigo
+     */
     public void usarMagiaCombate(NPCInimigo inimigo) {
         if (!inventario.isEmpty()) {
             for (Consumivel item : inventario) {
@@ -91,6 +118,10 @@ public abstract class Heroi extends Entidade {
         System.out.println("Você não tem nenhuma poção no inventário!");
     }
 
+    /**
+     * Método que configura o ganho de experiência do heroi de acordo com seu desempenho nos combates
+     * @param exp Valor da experiência do heroi
+     */
     public void ganharExperiencia(int exp) {
         this.experiencia += exp;
         if (this.experiencia >= 50 * this.nivel) {
@@ -109,39 +140,47 @@ public abstract class Heroi extends Entidade {
         System.out.println("Arma Principal: " + (armaPrincipal != null ? armaPrincipal.getNome() : "Nenhuma"));
     }
 
+    /**
+     * Método que configura o recebimento de dano que o heroi sofre no combate quando atacado
+     * @param dano Valor que o inimigo inferiu no heroi
+     */
     public void receberDano(int dano) {
         this.setVidaAtual(this.getVidaAtual() - dano);
         if (this.getVidaAtual() < 0) this.setVidaAtual(0);
     }
 
+    /**
+     * Metódo que configura o calculo de dano que o heroi causa no inimigo
+     * @return Retorna o valor do dano causado no inimigo de acordo com a categoria e arma principal do heroi.
+     */
     public int calcularDano() {
         Categoria categoria = getCategoria();
 
-        if (categoria != null) {
-            return categoria.calcularDano(this.getForca() + armaPrincipal.getAtaque());
-        }
-
         if (armaPrincipal != null) {
-            return categoria.calcularDano(this.getForca() + armaPrincipal.getAtaque());
+            return categoria.calcularDano(this.getForca()) + armaPrincipal.getAtaque();
         }
-
         return this.getForca();
     }
 
+    /**
+     * Método que configura o calculo de dano especial que o heroi causa no inimigo
+     * @return Retorna o valor do dano especial causado no inimigo de acordo com a categoria e arma principal
+     */
     public int calcularDanoEspecial() {
         Categoria categoria = getCategoria();
 
-        if (categoria != null) {
-                return categoria.calcularDano(this.getForca() + armaPrincipal.getAtaqueEspecial());
-        }
-
         if (armaPrincipal != null) {
-                return categoria.calcularDano(this.getForca() + armaPrincipal.getAtaqueEspecial());
+                return categoria.calcularDano(this.getForca()) + armaPrincipal.getAtaqueEspecial();
         }
 
         return this.getForca() + 5;
     }
 
+    /**
+     * Método que gerencia o acesso do heroi ao seu inventário
+     * @param emCombate Valor que defini se o inventario está sendo acessado dentro do combate
+     * @param inimigo NPCs configurados que antagonizam a narrativa
+     */
     public void acessarInventario(boolean emCombate, NPCInimigo inimigo) {
         Scanner scanner = new Scanner(System.in);
 
@@ -180,7 +219,7 @@ public abstract class Heroi extends Entidade {
             this.usarPocao();
         } else if (itemEscolhido instanceof MagiaCombate) {
             if (emCombate) {
-                this.usarMagiaCombate(inimigo); // Usa a magia de combate se estiver em combate
+                this.usarMagiaCombate(inimigo);
             } else {
                 System.out.println("Magias de combate só podem ser usadas durante o combate.");
             }

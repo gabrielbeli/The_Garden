@@ -15,6 +15,9 @@ public class NPCCompanheiro extends NPC {
         this.atribuirCategoriaAleatoria();
     }
 
+    /**
+     * Método que configura de forma alletória uma categoria para os NPCs companheiros diferindo da do heroi.
+     */
     private void atribuirCategoriaAleatoria() {
         Categoria categoriaAleatoria = CATEGORIAS.get(random.nextInt(CATEGORIAS.size()));
         this.setCategoria(categoriaAleatoria);
@@ -22,7 +25,7 @@ public class NPCCompanheiro extends NPC {
 
     @Override
     public int getForca() {
-        return (int) (super.getForca() * (2.0 / 3.0));
+        return super.getForca();
     }
 
     @Override
