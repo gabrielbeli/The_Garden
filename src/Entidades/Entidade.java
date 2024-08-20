@@ -62,4 +62,8 @@ public abstract class Entidade {
     public int getVidaMax() {
         return vidaMax;
     }
+
+    public void setVidaMax(int vidaMax) {
+        this.vidaMax = vidaMax;
+    }
 }

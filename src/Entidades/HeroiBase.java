@@ -25,4 +25,5 @@ public class HeroiBase extends Heroi {
     public int getForca() {
         return super.getForca();
     }
+
 }

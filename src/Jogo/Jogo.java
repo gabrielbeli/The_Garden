@@ -66,7 +66,7 @@ public class Jogo {
      * @param scanner Entrada de dados
      * @param ouroDisponivel Ouro disponível para distribuição
      * @param custoPorUnidade Custo de cada unidade do atributo
-     * @return valor determinado pelo jogador
+     * @return Valor determinado pelo jogador
      */
     private int definirValor(String atributo, int maximo, Scanner scanner, int ouroDisponivel, int custoPorUnidade) {
         int valor;
@@ -155,39 +155,183 @@ public class Jogo {
                 }
             }
         } else if (salaAtual.getTipo() == TipoSala.EVENTO) {
-            System.out.println("Você encontrou um evento especial!");
 
             NPC npc = salaAtual.getNPCsComuns().get(0);
 
             switch (salaAtual.getNome()) {
                 case "Planícies Verdejantes":
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Essa é a planície verdejante, meu pai me contou sobre ela..." +
+                            "parece tudo muito calmo, vou explorar e ver se encontro algo ou alguém que me ajude.");
+                    System.out.println("Um trevo logo a frente, vou falar com ele... Olá, eu sou " + heroi.getNome() + ". " +
+                            "Quem é você?\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Olá, me chamo "+ npc.getNome() + "! É um prazer te conhecer. O vento tem " +
+                            "sussurrado seu nome por todo o reino. Queria ter sua coragem... posso ajudar... tome, " +
+                            "fique com isso, pode ser útil, eu espero.");
+
                     heroi.setOuro(heroi.getOuro() + npc.getOuro());
-                    System.out.println("Você interagiu com o NPC e ganhou " + npc.getOuro() + " de ouro!");
-                    heroi.mostrarDetalhes();
+
+                    System.out.println("-------------------------------------\n");
+                    System.out.println(npc.getNome() + " te deu " + npc.getOuro() + " moedas de ouro!");
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Meus agradecimentos, "+ npc.getNome() +"... Pode me indicar o melhor caminho " +
+                            "para a Gruta do Orvalho?\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Você realmente tem coragem... para chegar até a Gruta do Orvalho não há o melhor " +
+                            "caminho, precisa escolher o que sua intuição mandar. Pode ir pelo  Campo das Papoulas ou " +
+                            "Campo das Rosas.Boa sorte!\n");
+
+                    System.out.println("\n-------------------------------------\n");
                     break;
 
                 case "Clareira das Lavandas":
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Esse cheiro é relaxante. Parece um lugar calmo para descansar\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Olá, me chamo "+ npc.getNome() + "! mas pode me chamar de Lila. Você com certeza" +
+                            " deve ser o espirito escolhido. Os rumores tomam o reino todo sobre uma nova esperança.\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Ahh... Olá Lila... acho que esperam demais de mim...\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Deixe disso, o Jardim não faria essa escolha se não tivesse certeza. " +
+                            "Confie nessa força, na sua força. Aqui pode descansar e leve com você isso.\n");
+
                     heroi.setOuro(heroi.getOuro() + npc.getOuro());
-                    System.out.println("Você interagiu com o NPC e ganhou " + npc.getOuro() + " de ouro!");
-                    heroi.mostrarDetalhes();
+
+                    System.out.println("-------------------------------------\n");
+                    System.out.println(npc.getNome() + " te deu " + npc.getOuro() + " moedas de ouro!");
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println(npc.getNome() +"... Lila... Pode me indicar o melhor caminho para a Gruta do Orvalho?\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Claro que sim! A Gruta do Orvalho fica a perto daqui, só precisa passar pela " +
+                            "Clareira das Margaridas. Elas te mostrarão o caminho.\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println(npc.getNome() +" Que ótima notícia, meus agradecimentos Lila!\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Que o espirito do Jardim guie seu caminho!\n");
+
                     break;
 
                 case "Clareira das Margaridas":
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Aqui estamos, a Clareira das Margaridas, a gruta deve estar por perto.\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Eiiiii... é você.... sim é você... não tem como não ser!\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Hum... olá... eu sou " + heroi.getNome()+".\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Deixe disso, sei quem você é, todos sabem. Estávamos a sua espera. Bromélia nos " +
+                            "avisou de sua chegada e disse para ajudarmos você a chegar a gruta.\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Sim, preciso encontrar a Gruta do Orvalho\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Levaremos você até lá. Também temos uma oferenda de boas energias a você, " +
+                            "acreditamos que será importante para continuar sua jornada.\n");
+
                     Pocao pocao = new Pocao("Poção de Vida", 50, 10, 5);
                     heroi.addAoInventario(pocao);
-                    System.out.println("Você interagiu com o NPC e ganhou uma " + pocao.getNome() + "!");
-                    heroi.mostrarDetalhes();
+
+                    System.out.println("-------------------------------------\n");
+                    System.out.println(npc.getNome() + " te de uma " + pocao.getNome() + "!");
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Meus agradecimentos... com certeza vai ajudar\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Agora se apresse, a gruta te espera.\n");
                     break;
 
                 case "Vale Solar":
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Ora viva, sejam bem vindos ao Vale Solar. Eu sou "+ npc.getNome() +"\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Esse lugar é incrível. Sinto tanta energia...\n");
+
+                    NPCCompanheiro primeiroCompanheiro = salaAtual.getCompanheiros().get(0);
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("Os girassóis carregam a luz solar...!\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("E mais do que isso, somos capazes de partilhar essa luz e fortalecer bons amigos\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Definitivamente é incrivel, espero voltar aqui quando tudo acabar...\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("São sempre bem-vindos, o espirito do Jardim escolheu vocês então são todos amigos." +
+                            "por isso entrego a vocês um pouco de luz, vão precisar para terminar essa jornada\n");
+
+                    heroi.setVidaMax(heroi.getVidaMax() + 20);
                     heroi.setVidaAtual(heroi.getVidaMax());
-                    heroi.setVidaAtual(heroi.getVidaAtual() + 20);
-                    System.out.println("Você interagiu com o NPC e sua vida foi restaurada ao máximo, com um acréscimo de 20 pontos!");
-                    heroi.mostrarDetalhes();
+
+                    System.out.println("-------------------------------------\n");
+                    System.out.println(npc.getNome() + ", restaurou ao máximo sua vida e aumentou em 20 pontos!");
+                    System.out.println("\n-------------------------------------\n");
+
+                    NPCCompanheiro segundoCompanheiro = salaAtual.getCompanheiros().get(1);
+                    System.out.println(segundoCompanheiro.getNome());
+                    System.out.println("Agradecemos pela ajuda." + npc.getNome() +" Precisamos continuar\n");
+
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("O próximo passo é o Pântano Venenoso, encontraremos a feiticeira!\n");
                     break;
 
                 case "Vale das Brisas":
+                    System.out.println("\n-------------------------------------\n");
 
+                    primeiroCompanheiro = salaAtual.getCompanheiros().get(0);
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("Bem vindos ao Vale das Brisas. Aqui conseguimos upar nossa vida... " +
+                            "vamos precisar disso e sorte!\n");
+
+                    segundoCompanheiro = salaAtual.getCompanheiros().get(1);
+                    System.out.println(segundoCompanheiro.getNome());
+                    System.out.println("Deixe de falar besteira. Vamos conseguir!");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Eu quero acreditar que sim, mas toda ajuda é bem vinda, então que bom que estamos aqui.\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Heyyyyyy... são os grandes herois ou uma brisa minha? Brincadeira, Bromélia me " +
+                            "avisou sobre vocês. Eu sou," + npc.getNome() + ", sejam bem-vindos ao Vale das Brisas. " +
+                            "Aproveitem, relaxem e me digam no que posso ajudar.\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Queremos upar nossas vidas...\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("E quem não quer não é mesmo?! Brincadeira, estão no lugar certo, a brisa aqui eleva mesmo. " +
+                            "Bom, sabem que tem um preço né? Cada ponto custa 1 moeda de ouro!\n");
+
+                    System.out.println("-------------------------------------\n");
                     System.out.println("Você tem " + heroi.getOuro() + " moedas de ouro.");
                     System.out.print("Quantos pontos de vida você deseja adicionar (cada ponto custa 1 moeda de ouro)? ");
                     int pontosVida = scanner.nextInt();
@@ -205,14 +349,61 @@ public class Jogo {
                         companheiro.setVidaAtual(companheiro.getVidaMax() + pontosVida);
                     }
 
-                    System.out.println("Você aumentou sua vida e a dos seus companheiros em " + pontosVida + " pontos!");
-                    heroi.mostrarDetalhes();
+                    System.out.println("\n Sua vida e a dos seus companheiros aumentou em " + pontosVida + " pontos!");
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Já é, ta feito parceirinhos! Foi uma brisa boa. Voltem quando quiserem!\n");
+
+                    System.out.println(segundoCompanheiro.getNome());
+                    System.out.println("Vamor seguir? Daqui podemos ir para o Pântano Venenoso.\n");
+
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("Ou podemos ir passar antes pelo Caminho Caladiano, é perigoso, mas " +
+                            "assim lutamos juntos antes enfrentar Beladona.\n");
                     break;
 
                 case "Vale das Orquídeas":
+                    System.out.println("\n-------------------------------------\n");
+
+                    segundoCompanheiro = salaAtual.getCompanheiros().get(1);
+                    System.out.println(segundoCompanheiro.getNome());
+                    System.out.println("Chegamos ao Vale das Orquídeas. Aqui, "+ npc.getNome()+ ", pode nos ajudar a " +
+                            "aumentar nossa força, ela foi uma grande guerreira do reino\n");
+
+                    primeiroCompanheiro = salaAtual.getCompanheiros().get(0);
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("E por que ela não luta ao nosso lado?.\n");
+
+                    System.out.println(segundoCompanheiro.getNome());
+                    System.out.println("Em seu ultimo combate ela perdeu a visão.\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Então como ela vai conseguir nos ajudar?\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Ainda sem minha visão seria capaz de lutar melhor do que vocês. " +
+                            "Não preciso enxergar para saber que vocês precisam se fortalecerem, do contrário Beladona " +
+                            "e seus servos vão tirar mais do que visão de vocês.\n");
+
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("Nossa, que grande incentivo não é mesmo?.\n");
+
+                    System.out.println(segundoCompanheiro.getNome());
+                    System.out.println("Peço desculpas," + npc.getNome()+ " não dê ouvidos a isso. Estamos aqui pois " +
+                            "precisamos de sua ajuda. Precisamos de seu treinamento!\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("Eu sei que estão aqui para isso... Disse a Bromélia que faria meu melhor. " +
+                            "O treinamento tem um custo, para cada ponto de força vão precisar de 5 moedas de ouro.\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Agradecemos, tenho comigo algumas moedas que juntei no caminho até aqui.\n");
+
+                    System.out.println("-------------------------------------\n");
 
                     System.out.println("Você tem " + heroi.getOuro() + " moedas de ouro.");
-                    System.out.print("Quantos pontos de força você deseja adicionar (cada ponto custa 5 moedas de ouro)? ");
+                    System.out.println("Quantos pontos de força você deseja adicionar (cada ponto custa 5 moedas de ouro)?: ");
                     int pontosForca = scanner.nextInt() / 5;
 
                     while (pontosForca < 0 || (pontosForca * 5) > heroi.getOuro()) {
@@ -228,11 +419,32 @@ public class Jogo {
                         companheiro.setForca(companheiro.getForca() + pontosForca);
                     }
 
-                    System.out.println("Você aumentou a sua força e a dos seus companheiros em " + pontosForca + " pontos!");
-                    heroi.mostrarDetalhes();
+                    System.out.println("\nVocê aumentou a sua força e a dos seus companheiros em " + pontosForca + " pontos!");
+
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Agradecemos o treinamento, " + npc.getNome() +"\n");
+
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("Vamos seguir? Daqui podemos ir para o Pântano Venenoso.\n");
+
+                    System.out.println(segundoCompanheiro.getNome());
+                    System.out.println("Ou podemos ir para o Caminho Urtiguento, é perigoso, mas assim colocamos o treino em pratica.\n");
+
+                    System.out.println(npc.getNome());
+                    System.out.println("O espirito do Jardim e de todos os guerreiros que se foram, estão juntos com voces!Até mais...\n");
+
+                    System.out.println(primeiroCompanheiro.getNome());
+                    System.out.println("Ela é sempre animada assim?\n");
                     break;
             }
         }
+    }
+
+    private void esperarEnter(Scanner scanner) {
+        System.out.println("Pressione Enter para continuar...");
+        scanner.nextLine();
     }
 
     /**
