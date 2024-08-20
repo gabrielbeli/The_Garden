@@ -8,8 +8,11 @@ import Entidades.NPC.NPCCompanheiro;
 import Entidades.NPC.NPCInimigo;
 import Itens.Pocao;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
+
+import static MetodosGenericos.ImprimirArquivo.imprimirArquivo;
 
 public class Jogo {
     private Heroi heroi;
@@ -125,7 +128,7 @@ public class Jogo {
      * @param salaAtual Identifica a sala que o heroi se encontra.
      * @param scanner Entrada de dados
      */
-    private void explorarSala(Sala salaAtual, Scanner scanner) {
+    private void explorarSala(Sala salaAtual, Scanner scanner) throws FileNotFoundException {
         if (salaAtual.isExplorada()) {
             System.out.println("Você já explorou esta sala. Não há mais nada para descobrir aqui.");
             return;
@@ -134,15 +137,111 @@ public class Jogo {
         // Caso a sala ainda não tenha sido explorada
         salaAtual.setExplorada(true);
 
-        if (salaAtual.getTipo() == TipoSala.VENDEDOR) {
+        if (salaAtual.getTipo() == TipoSala.INICIAL){
+            NPC npc = salaAtual.getNPCsComuns().get(0);
+
+            imprimirArquivo("src/Ficheiros/Narrativa01.txt");
+
+            System.out.println(npc.getNome());
+            System.out.println("Como posso continuar? Minha energia aos poucos está se esvaindo junto com todo o reino..." +
+                    "sinto Beladona a ganhar força. Não tenho mais como limitar os poderes dela e alimentar com luz a raízes sagradas.\n");
+            System.out.println("Quem está aí? Apareça!");
+
+            System.out.println(heroi.getNome());
+            System.out.println("Me desculpe vossa alteza, não quis incomodar. Fiquei responsável pela poda da sala.\n");
+
+            System.out.println(npc.getNome());
+            System.out.println("Não há o que desculpar. Não me atentei ao dia de poda...só precisava pensar por um momento..." +
+                    "vou o deixar fazer seu trabalho.\n");
+
+            System.out.println(heroi.getNome());
+            System.out.println("Me falta apenas a poda próxima ao trono vossa alteza, devo terminar em breve e deixar a sala livre.\n");
+
+            System.out.println(npc.getNome());
+            System.out.println("Não se preocupe, deixarei os aposentos... agradecida por seus serviços.\n");
+
+            System.out.println("-------------------------------\n");
+            System.out.println("Quando Bromélia estava deixando a sala, uma luz tomou o recinto. A feiticeira imediatamente " +
+                    "virou-se e não acreditava. O trono estava livre, os galhos e ramos formavam uma passagem, o espirito " +
+                    "do Jardim fez sua escolha.\n");
+            System.out.println("\n-------------------------------------\n");
+
+            System.out.println(heroi.getNome());
+            System.out.println("O que está acontecendo? Eu juro que não fiz nada, apenas me aproximei para fazer a poda..." +
+                    "é a minha primeira vez nessa sala...isso é normal?\n");
+
+            System.out.println(npc.getNome());
+            System.out.println("Definitivamente não, e é isso que torna extraordinariamente incrível. Finalmente temos " +
+                    "uma chance de salvar o reino. Precisamos conversar e depois você precisa ir até a Vendinha Cactos\n");
+
+        } else if (salaAtual.getTipo() == TipoSala.VENDEDOR) {
             salaAtual.setExplorada(false);
             Vendedor vendedor = salaAtual.getVendedor();
-            if (vendedor != null) {
-                if (!heroi.isCategoriaDefinida()) {
+
+            switch (salaAtual.getNome()) {
+                case "Vendinha Cactos":
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("Então você é a semente escolhida? Confesso que esperava alguém mais surpreendente, " +
+                            "mas se Bromélia acredita em seu potencial...\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Eu sou, "+ heroi.getNome() +", e ainda não sei bem como tudo aconteceu. A feiticeira " +
+                            "disse para encontrar a Vendinha Cactos ao lado de fora, que isso me ajudaria.\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("Acho que não me apresentei, sou Polegar Vermelho, dono da Vendinha Cactos. " +
+                            "Pode me encontrar por aqui ou acolá em um punhado de quantidade de caminhos. \n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Bromélia disse que aqui eu definiria o início da minha jornada...\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("E a grande feiticeira estava coberta de razão, minha família há anos ajuda " +
+                            "guerreiros de todos os tipos... \n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Guerreiros? Eu nunca lutei nada na minha vida, o trabalho da minha família é a poda real.\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("Humm...curioso...eu já tive clientes que não sabiam para onde ir, mas não saber quem são, é a primeira vez.\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Eu sei quem sou!\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("Tem a certeza disso?\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("...\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("Foi o que pensei... Mas não se preocupe! Se não sabe quem é, diga-me, quem voce gostaria de ser!\n");
+
+                    System.out.println("-------------------------------\n");
                     definirCategoriaHeroi(scanner);
-                }
-                System.out.println("-------------------------------\n");
-                vendedor.interagir(heroi);
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("Agora que já sabemos quem você quer ser, tenho muitos itens que podem te ajudar em sua missão. " +
+                            "Você precisa escolher seu artefato principal. Vamos dar uma olhada...\n");
+
+                    System.out.println("-------------------------------\n");
+                    vendedor.interagir(heroi);
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(vendedor.getNome());
+                    System.out.println("Já passa da hora de começar sua jornada. Lembre-se, o espirito do Jardim escolheu você, " +
+                            "pense bem em suas escolhas. Siga para a Gruta do Orvalho, ela é a entrada para o caminho que busca. " +
+                            "Você pode seguir pela Planície Verdejante ou pelo Grande Penedo.\n");
+                    break;
+                case"Gruta do Orvalho":
+                    System.out.println("\n-------------------------------------\n");
+                    break;
+                case"Lagoa dos Cristais":
+                    System.out.println("\n-------------------------------------\n");
+
             }
         } else if (salaAtual.getTipo() == TipoSala.COMBATE) {
             List<NPCInimigo> inimigos = salaAtual.getInimigos();
@@ -468,7 +567,7 @@ public class Jogo {
     /**
      * Metodo que dá inicio ao jogo depois que o heroi foi criado.
      */
-    public void iniciarAventura() {
+    public void iniciarAventura() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Sua aventura começa agora!");

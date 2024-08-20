@@ -11,7 +11,7 @@ public class ImprimirArquivo {
      * @param caminho para o arquivo
      * @throws FileNotFoundException Excessão quando não se encontra o caminho especificado
      */
-    public static void imprimirAquivo(String caminho) throws FileNotFoundException {
+    public static void imprimirArquivo(String caminho) throws FileNotFoundException {
 
         Scanner fileScanner = new Scanner(new File(caminho));
 
