@@ -1,0 +1,13 @@
+heroi.getNome()
+Esse cheiro é relaxante. Parece um lugar calmo para descansar.@
+
+npc.getNome()
+Olá, me chamo npc.getNome()! Mas pode me chamar de Lila. Você com certeza deve ser o espirito escolhido.
+Os rumores tomam o reino sobre uma nova esperança.@
+
+heroi.getNome()
+Ahh... Olá Lila... acho que esperam demais de mim...@
+
+npc.getNome()
+Deixe disso, o Jardim não faria essa escolha se não tivesse certeza.
+Confie nessa força, na sua força. Aqui pode descansar e leve isso com você.@

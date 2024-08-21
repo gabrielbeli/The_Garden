@@ -1,0 +1,29 @@
+segundoCompanheiro.getNome()
+Chegamos ao Vale das Orquídeas. Aqui, npc.getNome(), pode nos ajudar a aumentar a nossa força,
+ela foi uma grande guerreira do reino.@
+
+System.out.println(primeiroCompanheiro.getNome()
+System.out.println("E por que ela não luta ao nosso lado?.@
+
+segundoCompanheiro.getNome()
+Em seu ultimo combate ela perdeu a visão.@
+
+heroi.getNome()
+Então como ela vai conseguir nos ajudar?@
+
+npc.getNome()
+Ainda sem minha visão conseguiria lutar melhor do que vocês. Não preciso enxergar para saber que vocês precisam se fortalecerem,
+do contrário Beladona e os seus servos vão tirar mais do que visão de vocês.@
+
+primeiroCompanheiro.getNome()
+Nossa, que grande incentivo não é mesmo?.@
+
+segundoCompanheiro.getNome()
+Peço desculpas, npc.getNome(), não dê ouvidos a isso. Estamos aqui, pois precisamos da sua ajuda. Precisamos do seu treino!@
+
+npc.getNome()
+Eu sei que estão aqui para isso... Disse a Bromélia que faria o meu melhor.
+O treino tem um custo, para cada ponto de força vão precisar de 5 moedas de ouro.@
+
+heroi.getNome()
+Agradecemos, tenho comigo algumas moedas que juntei no caminho até aqui.@

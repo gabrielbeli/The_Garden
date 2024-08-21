@@ -1,0 +1,37 @@
+
+🌵 vendedor.getNome()
+Então você é a semente escolhida? Confesso que esperava alguém mais surpreendente, mas se Bromélia acredita no seu potencial...@
+
+heroi.getNome()
+Eu sou, heroi.getNome(), e ainda não sei bem como tudo aconteceu.
+A feiticeira disse para encontrar a Vendinha Cactos ao lado de fora, que isso me ajudaria.@
+
+🌵 vendedor.getNome()
+Acho que não me apresentei, sou vendedor.getNome(), dono da Vendinha Cactos.
+Pode me encontrar por aqui ou acolá num punhado de quantidade de caminhos.@
+
+heroi.getNome()
+Bromélia disse que aqui eu definiria o início da minha jornada...@
+
+🌵 vendedor.getNome()
+E a grande feiticeira estava coberta de razão, a minha família há anos ajuda guerreiros de todos os tipos... @
+
+heroi.getNome()
+Guerreiros? Eu nunca lutei nada na minha vida, o trabalho da minha família é a poda real.@
+
+🌵 vendedor.getNome()
+Humm...curioso...eu já tive clientes que não sabiam para onde ir, mas não saber quem são, é a primeira vez.@
+
+heroi.getNome()
+Eu sei quem sou!@
+
+🌵 vendedor.getNome()
+Tem a certeza disso?@
+
+heroi.getNome()
+"..."@
+
+🌵 vendedor.getNome()
+Foi o que pensei... Mas não se preocupe! Se não sabe quem é, diga-me, quem voce gostaria de ser!@
+
+------------------------------------------------------------------------------------------------------------------------

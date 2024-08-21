@@ -114,7 +114,7 @@ public class GerenciadorSalas {
         List<NPCInimigo> inimigosCaminhoUrtiguento = List.of(urtigao);
         List<NPCInimigo> inimigosCaminhoCaladiano = List.of(caladino);
         List<NPCInimigo> inimigosPantanoVenenoso = List.of(beladona);
-        List<NPCInimigo> inimigosUmbralEspinhento = List.of(espinho);
+        List<NPCInimigo> inimigosUmbralEspinhento = List.of(espinho, beladona);
         List<NPCCompanheiro> companheirosBatalhaFinal = List.of(leave, gyp, denteLeao);
 
         // Adicionando as listas de armas ao vendedor

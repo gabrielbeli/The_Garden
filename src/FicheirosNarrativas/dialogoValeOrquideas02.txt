@@ -1,0 +1,14 @@
+heroi.getNome()
+Agradecemos o treinamento, npc.getNome().@
+
+primeiroCompanheiro.getNome()
+Vamos seguir? Daqui podemos ir para o Pântano Venenoso.@
+
+segundoCompanheiro.getNome()
+Ou podemos ir para o Caminho Urtiguento, é perigoso, mas assim colocamos o treino em prática.@
+
+npc.getNome()
+O espirito do Jardim e de todos os guerreiros que se foram, estão juntos com voces! Até mais...@
+
+primeiroCompanheiro.getNome()
+Ela é sempre "animada" assim?@

@@ -1,0 +1,59 @@
+A batalha foi longa, mas o príncipe dourado saiu vitorioso assim como na história.
+Com a ajuda da semente escolhida e a força dos companheiros.@
+
+terceiroCompanheiro.getNome()
+Eu não queria isso irmão. Nunca quis te ferir, nunca quis o trono, mas ainda sim sou um príncipe, como você,
+não posso fugir das minhas responsabilidades. Se o reino precisa de mim, tenho que dar o meu melhor.@
+
+inimigo.getNome()
+A que preço irmão? Tirou a vida do seu irmão e do amor da vida dele...
+Espero que consiga governar mesmo carregando esse fardo. Ainda que por pouco tempo.@
+
+terceiroCompanheiro.getNome()
+Do que está falando?@
+
+inimigo.getNome()
+Adeus, irmão...@
+
+segundoCompanheiro.getNome()
+Majestade, o senhor precisa de tratamento, está ferido...@
+
+terceiroCompanheiro.getNome()
+É apenas um corte que Beladona me fez, não é nada grave.@
+
+primeiroCompanheiro.getNome()
+Esse não é o corte da história...@
+
+heroi.getNome()
+E agora, o que faremos? Como voltamos para casa?@
+
+terceiroCompanheiro.getNome()
+Eu preparei o velório do meu irmão e servirei o reino como manda o meu dever.
+Podem ficar no palácio, serão reconhecidos pela bravura de lutarem ao meu lado.@
+
+heroi.getNome()
+Mas o que contara ao reino?@
+
+terceiroCompanheiro.getNome()
+Contarei o que eles precisam ouvir, a história de um rei.@
+
+segundoCompanheiro.getNome()
+heroi,getNome(), não temos como voltar para casa. Aqui, agora é o nosso novo presente.
+Impediremos Beladona de fazer mal no futuro, então cumprimos a nossa missão.@
+
+heroi.getNome()
+Mas nada garante que tudo ficará bem. Sabemos que ele foi envenenado...
+E o que ele quis dizer com contar a história que precisam ouvir?
+Se a história for a mesma que ouvimos, é uma mentira. Espinho nunca teve a intenção de matar o irmão.@
+
+primeiroCompanheiro.getNome()
+Mas pelo jeito não temos como fazer mais nada, já está feito, não é mesmo?@
+
+heroi.getNome()
+Então falhamos... eu falhei com o Jardim... falhei comigo...@
+
+Conta a história que no passado dois guerreiros travaram uma luta pelo trono.
+Dessa batalha, Dente de Leão, conhecido como príncipe dourado, subjugou o seu irmão, Espinho, conhecido como justiça sombria.
+Mas, por mais que tenha vencido a luta, fora afetado pelo seu veneno, acarretando a sua morte anos depois.
+O conselho tomou por decisão que a partir de então não haveria mais coroas, passando o governo a ser responsabilidade
+do próprio conselho e da feiticeira Bromélia.@

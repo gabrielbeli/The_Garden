@@ -1,0 +1,40 @@
+Quando o príncipe dourado estava prestes a deferir o golpe fatal no seu irmão,
+a semente escolhida se colocou a frente e levou o golpe.@
+
+segundoCompanheiro.getNome() e primeiroCompaheiro.getNome()
+NÃOOOO!@
+
+terceiroCompanheiro.getNome()
+O que você está fazendo?@
+
+heroi.getNome()
+Não entendem? O reino precisa de vocês dois! Não de uma luta. Não importaria o resultado, o Jardim sairia perdendo de alguma forma.
+Fosse pela escuridão ou pela cegueira causa pelo deslumbramento dourado.@
+
+inimigo.getNome()
+Ele matou a minha Beladona, como acha que poderei perdoá-lo?@
+
+heroi.getNome()
+Não, ele não a matou. Beladona escolheu isso, esse caminho, cega por vingança da sua morte. Mas se você não morrer,
+isso nunca vai acontecer e vocês podem continuar a história juntos.
+É uma oportunidade dada a ambos os príncipes de não cometerem o mesmo erro...@
+
+terceiroCompanheiro.getNome()
+O ferimento, você...@
+
+[nome escolhido]
+Está tudo bem... comecei essa jornada não sabendo quem eu era, mas encontrei amigos, proposito e posso finalmente
+aceitar o meu destino como a semente escolhida pelo Jardim...
+Só façam valer a pena.
+
+Adeus...@
+
+Conta a história que no passado dois guerreiros travaram uma luta pelo trono. Dente de Leão e Espinho, irmãos,
+cada qual com as suas qualidades e defeitos. Nessa batalha, ambos encontraram a sensatez num ato de coragem de uma jovem semente
+que deu a sua vida pelo bem do Jardim. A história ainda conta sobre mais dois cavalheiros, Gyp e Leave, que mais tarde se casariam
+e aposentados das suas funções, seriam conhecidos como a família da poda real.@
+
+O jardim, passou a ser governado duplamente pelos dois reis, cada qual com as suas funções, e com apoio das
+feiticeiras protetoras Bromélia e Beladona.
+
+Um lugar onde todos os seres podiam viver em união e em paz.@

@@ -1,0 +1,19 @@
+heroi.getNome()
+Aqui estamos, a Clareira das Margaridas, a gruta deve estar por perto.@
+
+npc.getNome()
+Eiiiii... é você.... sim é você... não tem como não ser!@
+
+heroi.getNome()
+Hum... olá... eu sou " + heroi.getNome()+".@
+
+npc.getNome()
+Deixe disso, sei quem você é, todos sabem. Estávamos a sua espera. Bromélia avisou-nos da sua chegada
+e disse para ajudarmos você a chegar a gruta.@
+
+heroi.getNome()
+Sim, preciso encontrar a Gruta do Orvalho.@
+
+npc.getNome()
+Levaremos você até lá. Também temos uma oferenda de boas energias a você,
+acreditamos que será importante para continuar a sua jornada.@

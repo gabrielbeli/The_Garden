@@ -1,0 +1,13 @@
+heroi.getNome()
+Essa é a planície verdejante, meu pai me contou sobre ela... parece tudo muito calmo,
+vou explorar e ver se encontro algo ou alguém que me ajude.@
+
+Um trevo logo a frente, vou falar com ele...
+Olá, eu sou, heroi.getNome(). Quem é você?@
+
+npc.getNome()
+Olá, me chamo npc.getNome()! É um prazer te conhecer. O vento sussurra o seu nome pelo reino.
+Queria ter a sua coragem... posso ajudar... tome, fique com isso, pode ser útil, eu espero.@
+
+
+

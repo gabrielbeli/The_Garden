@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------------------------------------------------@
+heroi.getNome()
+Por onde devemos seguir?@
+
+🌵 vendedor.getNome()
+Podem ir pelo Vale Solar e depois serão levados direto ao Pântano.@
+
+segundoCompanheiro.getNome()
+Podemos seguir pelo Vale das Orquídeas e ganhar experiencia.@
+
+primeiroCompanheiro.getNome()
+O Vale das Brisas também é uma ótima opção para uparmos as nossas habilidades.@
+
+🌵 vendedor.getNome()
+A liderança é sua e confiamos em você, os vejo em breve. Que o Jardim os guie.@
+
+----------------------------------------------------------------------------------------------------------------------

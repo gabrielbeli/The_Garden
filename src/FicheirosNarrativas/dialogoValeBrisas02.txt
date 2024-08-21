@@ -1,0 +1,8 @@
+npc.getNome()
+Já é, ta feito parceirinhos! Foi uma brisa boa. Voltem quando quiserem!@
+
+segundoCompanheiro.getNome()
+Vamor seguir? Daqui podemos ir para o Pântano Venenoso.@
+
+primeiroCompanheiro.getNome()
+Ou podemos ir passar antes pelo Caminho Caladiano, é perigoso, mas assim lutamos juntos antes de enfrentar Beladona.@

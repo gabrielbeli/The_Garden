@@ -1,0 +1,12 @@
+heroi.getNome()
+npc.getNome()... Lila... Pode me indicar o melhor caminho para a Gruta do Orvalho?@
+
+npc.getNome()
+Claro que sim! A Gruta do Orvalho fica perto daqui, só precisa passar pela Clareira das Margaridas.
+Elas te mostrarão o caminho.@
+
+heroi.getNome()
+Que ótima notícia, meus agradecimentos Lila!@
+
+npc.getNome()
+Que o espirito do Jardim guie seu caminho!@

@@ -260,4 +260,8 @@ public abstract class Heroi extends Entidade {
     public Categoria getCategoria() {
         return categoria;
     }
+
+    public ArrayList<Consumivel> getInventario() {
+        return inventario;
+    }
 }

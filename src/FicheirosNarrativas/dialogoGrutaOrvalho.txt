@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------------------------------------------@
+🌵 vendedor.getNome()
+Ora, veja quem chegou... A jornada tem corrido bem?@
+
+heroi.getNome()
+Polegar Vermelho? Mas você não tinha ficado junto ao palácio?@
+
+🌵 vendedor.getNome()
+Eu disse a você que esta por um punhado de caminhos e aqui estou... 
+Mas vamos ao que interessa, sua jornada... 
+Bromélia pediu-me para reunir alguma ajuda para você, os desafios a seguir não serão fáceis. Precisa de cautela.@
+
+heroi.getNome()
+Ajuda? Do que está falando?@
+
+🌵 vendedor.getNome()
+Tenha calma, já vou lhe apresentar... Esses são primeiroCompanheiro.getNome() e segundoCompanheiro.getNome(), 
+serão seus companheiros a partir de agora.@
+
+heroi.getNome()
+Isso é ótimo, é um prazer conhecê-los.@
+
+primeiroCompanheiro.getNome()
+Conte com a gente! Vencermos essa batalha.@
+
+segundoCompanheiro.getNome() 
+Fico feliz em poder ajudar a semente escolhida, espero ser útil.@
+
+🌵 vendedor.getNome()
+Agora, herói.getNome(), vocês devem chegar ao Pântano Venenoso, mas lembrem-se, lá é o lar de Beladona, 
+então tenham a certeza de estarem preparados. Se preciso, escolham o caminho mais longo para ganhar experiencia. 
+Veja o que tenho na loja, talvez algo ajude na jornada.@
+
+----------------------------------------------------------------------------------------------------------------------

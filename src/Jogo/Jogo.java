@@ -7,12 +7,11 @@ import Entidades.NPC.NPC;
 import Entidades.NPC.NPCCompanheiro;
 import Entidades.NPC.NPCInimigo;
 import Itens.Pocao;
+import MetodosGenericos.ImprimirArquivo;
 
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
-
-import static MetodosGenericos.ImprimirArquivo.imprimirArquivo;
 
 public class Jogo {
     private Heroi heroi;
@@ -39,7 +38,7 @@ public class Jogo {
         int escolhaModo = scanner.nextInt();
         int ouroInicial = (escolhaModo == 1) ? 300 : 200;
 
-        System.out.println("\nVocê tem " + ouroInicial + " de ouro para distribuir entre Vida e Força.");
+        System.out.println("\nVocê tem " + ouroInicial + " de ouro para distribuir entre Vida e Força.\n");
 
         // Distribuição de pontos de vida (1 ponto de vida custa 1 moeda)
         int vidaMax = definirValor("vida", 100, scanner, ouroInicial, 1);
@@ -50,24 +49,25 @@ public class Jogo {
         ouroInicial -= forca * 10;
 
         // Escolha do nome do herói
-        System.out.print("Escolha o nome do seu herói: ");
+        System.out.print("\nEscolha o nome do seu herói: ");
         String nomeHeroi = scanner.next();
 
         // Criar o objeto heroi
         heroi = new HeroiBase(nomeHeroi, vidaMax, forca);
         heroi.setOuro(ouroInicial);
 
-        System.out.println("Herói criado com sucesso!");
-        System.out.println("-------------------------------\n");
+        System.out.println("\nHerói criado com sucesso!");
+        System.out.println("-------------------------------");
         heroi.mostrarDetalhes();
     }
 
     /**
      * Método auxiliar que ajuda na construção do personagem
-     * @param atributo Nome do atributo (vida ou força)
-     * @param maximo Valor máximo permitido para o atributo
-     * @param scanner Entrada de dados
-     * @param ouroDisponivel Ouro disponível para distribuição
+     *
+     * @param atributo        Nome do atributo (vida ou força)
+     * @param maximo          Valor máximo permitido para o atributo
+     * @param scanner         Entrada de dados
+     * @param ouroDisponivel  Ouro disponível para distribuição
      * @param custoPorUnidade Custo de cada unidade do atributo
      * @return Valor determinado pelo jogador
      */
@@ -88,15 +88,17 @@ public class Jogo {
     /**
      * Metodo para definir a categoria do heroi;
      * Guerreiro | Druida | Bardo | Ranger
+     *
      * @param scanner Entrada de dados
      */
     private void definirCategoriaHeroi(Scanner scanner) {
-        System.out.println("Escolha a categoria do herói:\n");
+        System.out.println("Categorias");
         System.out.println("1. Guerreiro");
         System.out.println("2. Bardo");
         System.out.println("3. Druida");
         System.out.println("4. Ranger");
 
+        System.out.print("\nFaça sua escolha: ");
         int escolhaCategoria = scanner.nextInt();
         Categoria categoriaSelecionada;
 
@@ -124,55 +126,26 @@ public class Jogo {
     }
 
     /**
-     * Método que implementa a eploração de acordo com o tipo de sala.
+     * Método que implementa a exploração conforme o tipo de sala.
+     *
      * @param salaAtual Identifica a sala que o heroi se encontra.
-     * @param scanner Entrada de dados
+     * @param scanner   Entrada de dados
      */
     private void explorarSala(Sala salaAtual, Scanner scanner) throws FileNotFoundException {
         if (salaAtual.isExplorada()) {
             System.out.println("Você já explorou esta sala. Não há mais nada para descobrir aqui.");
             return;
         }
-
         // Caso a sala ainda não tenha sido explorada
         salaAtual.setExplorada(true);
 
-        if (salaAtual.getTipo() == TipoSala.INICIAL){
-            NPC npc = salaAtual.getNPCsComuns().get(0);
+        if (salaAtual.getTipo() == TipoSala.INICIAL) {
 
-            imprimirArquivo("src/Ficheiros/Narrativa01.txt");
+            ImprimirArquivo imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
 
-            System.out.println(npc.getNome());
-            System.out.println("Como posso continuar? Minha energia aos poucos está se esvaindo junto com todo o reino..." +
-                    "sinto Beladona a ganhar força. Não tenho mais como limitar os poderes dela e alimentar com luz a raízes sagradas.\n");
-            System.out.println("Quem está aí? Apareça!");
+            imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativa01.txt");
 
-            System.out.println(heroi.getNome());
-            System.out.println("Me desculpe vossa alteza, não quis incomodar. Fiquei responsável pela poda da sala.\n");
-
-            System.out.println(npc.getNome());
-            System.out.println("Não há o que desculpar. Não me atentei ao dia de poda...só precisava pensar por um momento..." +
-                    "vou o deixar fazer seu trabalho.\n");
-
-            System.out.println(heroi.getNome());
-            System.out.println("Me falta apenas a poda próxima ao trono vossa alteza, devo terminar em breve e deixar a sala livre.\n");
-
-            System.out.println(npc.getNome());
-            System.out.println("Não se preocupe, deixarei os aposentos... agradecida por seus serviços.\n");
-
-            System.out.println("-------------------------------\n");
-            System.out.println("Quando Bromélia estava deixando a sala, uma luz tomou o recinto. A feiticeira imediatamente " +
-                    "virou-se e não acreditava. O trono estava livre, os galhos e ramos formavam uma passagem, o espirito " +
-                    "do Jardim fez sua escolha.\n");
-            System.out.println("\n-------------------------------------\n");
-
-            System.out.println(heroi.getNome());
-            System.out.println("O que está acontecendo? Eu juro que não fiz nada, apenas me aproximei para fazer a poda..." +
-                    "é a minha primeira vez nessa sala...isso é normal?\n");
-
-            System.out.println(npc.getNome());
-            System.out.println("Definitivamente não, e é isso que torna extraordinariamente incrível. Finalmente temos " +
-                    "uma chance de salvar o reino. Precisamos conversar e depois você precisa ir até a Vendinha Cactos\n");
+            imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoSalaTrono.txt");
 
         } else if (salaAtual.getTipo() == TipoSala.VENDEDOR) {
             salaAtual.setExplorada(false);
@@ -180,50 +153,16 @@ public class Jogo {
 
             switch (salaAtual.getNome()) {
                 case "Vendinha Cactos":
-                    System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(vendedor.getNome());
-                    System.out.println("Então você é a semente escolhida? Confesso que esperava alguém mais surpreendente, " +
-                            "mas se Bromélia acredita em seu potencial...\n");
+                    ImprimirArquivo imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
 
-                    System.out.println(heroi.getNome());
-                    System.out.println("Eu sou, "+ heroi.getNome() +", e ainda não sei bem como tudo aconteceu. A feiticeira " +
-                            "disse para encontrar a Vendinha Cactos ao lado de fora, que isso me ajudaria.\n");
-
-                    System.out.println(vendedor.getNome());
-                    System.out.println("Acho que não me apresentei, sou Polegar Vermelho, dono da Vendinha Cactos. " +
-                            "Pode me encontrar por aqui ou acolá em um punhado de quantidade de caminhos. \n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Bromélia disse que aqui eu definiria o início da minha jornada...\n");
-
-                    System.out.println(vendedor.getNome());
-                    System.out.println("E a grande feiticeira estava coberta de razão, minha família há anos ajuda " +
-                            "guerreiros de todos os tipos... \n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Guerreiros? Eu nunca lutei nada na minha vida, o trabalho da minha família é a poda real.\n");
-
-                    System.out.println(vendedor.getNome());
-                    System.out.println("Humm...curioso...eu já tive clientes que não sabiam para onde ir, mas não saber quem são, é a primeira vez.\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Eu sei quem sou!\n");
-
-                    System.out.println(vendedor.getNome());
-                    System.out.println("Tem a certeza disso?\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("...\n");
-
-                    System.out.println(vendedor.getNome());
-                    System.out.println("Foi o que pensei... Mas não se preocupe! Se não sabe quem é, diga-me, quem voce gostaria de ser!\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoVendinhaCactos.txt");
 
                     System.out.println("-------------------------------\n");
                     definirCategoriaHeroi(scanner);
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(vendedor.getNome());
+                    System.out.println("\uD83C\uDF35 " + vendedor.getNome());
                     System.out.println("Agora que já sabemos quem você quer ser, tenho muitos itens que podem te ajudar em sua missão. " +
                             "Você precisa escolher seu artefato principal. Vamos dar uma olhada...\n");
 
@@ -231,46 +170,230 @@ public class Jogo {
                     vendedor.interagir(heroi);
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(vendedor.getNome());
+                    System.out.println("\uD83C\uDF35 " + vendedor.getNome());
                     System.out.println("Já passa da hora de começar sua jornada. Lembre-se, o espirito do Jardim escolheu você, " +
                             "pense bem em suas escolhas. Siga para a Gruta do Orvalho, ela é a entrada para o caminho que busca. " +
                             "Você pode seguir pela Planície Verdejante ou pelo Grande Penedo.\n");
+
                     break;
-                case"Gruta do Orvalho":
+
+                case "Gruta do Orvalho":
                     System.out.println("\n-------------------------------------\n");
-                    break;
-                case"Lagoa dos Cristais":
+                    imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoGrutaOrvalho.txt");
+
+                    System.out.println("-------------------------------\n");
+                    vendedor.interagir(heroi);
                     System.out.println("\n-------------------------------------\n");
 
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoGrutaOrvalho02.txt");
+
+                    break;
+
+                case "Lagoa dos Cristais":
+                    System.out.println("\n-------------------------------------\n");
+                    imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativa04.txt");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoLagoaCristais.txt");
+
+                    System.out.println("-------------------------------\n");
+                    vendedor.interagir(heroi);
+                    System.out.println("\n-------------------------------------\n");
+
+                    System.out.println(heroi.getNome());
+                    System.out.println("Polegar, você sabe onde podemos encontrar o príncipe Espinho?\n");
+
+                    ImprimirArquivo.esperarEnter();
+
+                    System.out.println("\uD83C\uDF35 " + vendedor.getNome());
+                    System.out.println("Aquele rabugento deve estar no Umbral Espinhento, boa sorte.\n");
+
+                    break;
             }
+
         } else if (salaAtual.getTipo() == TipoSala.COMBATE) {
             List<NPCInimigo> inimigos = salaAtual.getInimigos();
-            for (NPCInimigo inimigo : inimigos) {
-                System.out.println("Um inimigo aparece: " + inimigo.getNome());
-                boolean vitoria = gerenciadorCombate.realizarCombate(heroi, salaAtual.getCompanheiros(), inimigo);
-                if (!vitoria) {
-                    System.out.println("Você foi derrotado! Fim de jogo.");
-                    return;
-                }
-            }
-        } else if (salaAtual.getTipo() == TipoSala.EVENTO) {
+            ImprimirArquivo imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
 
+            switch (salaAtual.getNome()) {
+                case "Grande Penedo":
+                    System.out.println("\n-------------------------------------\n");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoGrandePenedo.txt");
+
+                    for (NPCInimigo inimigo : inimigos) {
+                        System.out.println(heroi.getNome() + " VS " + inimigo.getNome());
+                        boolean vitoria = gerenciadorCombate.realizarCombate(heroi, salaAtual.getCompanheiros(), inimigo);
+                        if (!vitoria) {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Tão insignificante! O que é a coragem sem força? Vida longa a Beladona!\n");
+                            return;
+                        } else {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Você encontrará seu fim, nossa rainha vencerá, morremos honrados...\n");
+
+                            ImprimirArquivo.esperarEnter();
+
+                            System.out.println(heroi.getNome());
+                            System.out.println("Para uma primeira vez até que me sai bem! Por onde devo seguir?\n");
+                            return;
+                        }
+                    }
+
+                    System.out.println("\n-------------------------------------\n");
+                    break;
+
+                case "Campo das Papoulas":
+                    System.out.println("\n-------------------------------------\n");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoCampoPapoulas.txt");
+
+                    for (NPCInimigo inimigo : inimigos) {
+                        System.out.println(heroi.getNome() + " VS " + inimigo.getNome());
+                        boolean vitoria = gerenciadorCombate.realizarCombate(heroi, salaAtual.getCompanheiros(), inimigo);
+                        if (!vitoria) {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Nossa rainha ficará encantada com a beleza de nossa conquista. Vida longa a Beladona.\n");
+                            return;
+                        } else {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Maldição! Veja o que fez com a gente...estamos murchando...como pode destruir algo tão belo como nós...\n");
+
+                            ImprimirArquivo.esperarEnter();
+
+                            System.out.println(heroi.getNome());
+                            System.out.println("Para uma primeira vez até que me sai bem! Por onde devo seguir?\n");
+                            return;
+                        }
+                    }
+
+                    System.out.println("\n-------------------------------------\n");
+                    break;
+
+                case "Campo das Rosas":
+                    System.out.println("\n-------------------------------------\n");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativa2A.txt");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoCampoRosas.txt");
+
+                    for (NPCInimigo inimigo : inimigos) {
+                        System.out.println(heroi.getNome() + " VS " + inimigo.getNome());
+                        boolean vitoria = gerenciadorCombate.realizarCombate(heroi, salaAtual.getCompanheiros(), inimigo);
+                        if (!vitoria) {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Você falhou! Mas isso já era esperado de alguém que nem mesmo sabem quem é. Vida longa à Beladona.\n");
+                            return;
+                        } else {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Impossível! Você nem mesmo sabe quem você é e nos somos as Rosas, a elite das flores,\n " +
+                                    "senhoras do Jardim... como ousa nos tratar assim... que Beladona acabe com sua existência.\n");
+
+                            ImprimirArquivo.esperarEnter();
+
+                            System.out.println(heroi.getNome());
+                            System.out.println("Esse desafo foi maior, mas não posso parar, preciso chegar a Gruta do Orvalho.\n");
+                            return;
+                        }
+                    }
+
+                    System.out.println("\n-------------------------------------\n");
+                    break;
+
+                case "Caminho Urtiguento":
+                    System.out.println("\n-------------------------------------\n");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoCaminhoUrtiguento.txt");
+
+                    for (NPCInimigo inimigo : inimigos) {
+                        System.out.println(heroi.getNome() + " VS " + inimigo.getNome());
+                        boolean vitoria = gerenciadorCombate.realizarCombate(heroi, salaAtual.getCompanheiros(), inimigo);
+                        if (!vitoria) {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Eu disse que não importava. Vocês encontraram seu fim criaturas medíocres. Vida longa a Beladona.\n");
+                            return;
+                        } else {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Como? Vocês não passam de seres medíocres. Como pude ser derrotado assim?\n " +
+                                    "Espero que Beladona coloque um fim a existência de vocês...\n");
+
+                            ImprimirArquivo.esperarEnter();
+
+                            System.out.println(heroi.getNome());
+                            System.out.println("Parece que formamos uma boa equipe afinal!\n");
+                            return;
+                        }
+                    }
+
+                    System.out.println("\n-------------------------------------\n");
+                    break;
+
+                case "Caminho Caladiano":
+                    System.out.println("\n-------------------------------------\n");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoCaminhoCaladiano.txt");
+
+                    for (NPCInimigo inimigo : inimigos) {
+                        System.out.println(heroi.getNome() + " VS " + inimigo.getNome());
+                        boolean vitoria = gerenciadorCombate.realizarCombate(heroi, salaAtual.getCompanheiros(), inimigo);
+                        if (!vitoria) {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Vocês até que tentaram, um belo tira-gosto. Vida longa a Beladona.\n");
+                            return;
+                        } else {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Pelo visto subestimei vocês, mas não importa, minha rainha terminara esse trabalho, boa morte...\n");
+
+                            ImprimirArquivo.esperarEnter();
+
+                            System.out.println(heroi.getNome());
+                            System.out.println("Parece que formamos uma boa equipe afinal!\n");
+                            return;
+                        }
+                    }
+
+                    System.out.println("\n-------------------------------------\n");
+                    break;
+
+                case "Pântano Venenoso":
+                    System.out.println("\n-------------------------------------\n");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativa03.txt");
+
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoPantanoVenenoso.txt");
+
+                    for (NPCInimigo inimigo : inimigos) {
+                        System.out.println(heroi.getNome() + " VS " + inimigo.getNome());
+                        boolean vitoria = gerenciadorCombate.realizarCombate(heroi, salaAtual.getCompanheiros(), inimigo);
+                        if (!vitoria) {
+                            System.out.println(inimigo.getNome());
+                            System.out.println("Eu disse a Bromélia que era uma questão de tempo, que ela não conseguiria me manter aqui para sempre.\n " +
+                                    "Parece que ela depositou suas últimas energias nessa tentativa patética. Agora é hora de terminar o que comecei!\n");
+                            return;
+                        } else {
+                            imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoPantanoVenenoso02.txt");
+                            return;
+                        }
+                    }
+
+                    System.out.println("\n-------------------------------------\n");
+                    break;
+            }
+
+        } else if (salaAtual.getTipo() == TipoSala.EVENTO) {
+            ImprimirArquivo imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
             NPC npc = salaAtual.getNPCsComuns().get(0);
 
             switch (salaAtual.getNome()) {
                 case "Planícies Verdejantes":
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(heroi.getNome());
-                    System.out.println("Essa é a planície verdejante, meu pai me contou sobre ela..." +
-                            "parece tudo muito calmo, vou explorar e ver se encontro algo ou alguém que me ajude.");
-                    System.out.println("Um trevo logo a frente, vou falar com ele... Olá, eu sou " + heroi.getNome() + ". " +
-                            "Quem é você?\n");
+                    imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
 
-                    System.out.println(npc.getNome());
-                    System.out.println("Olá, me chamo "+ npc.getNome() + "! É um prazer te conhecer. O vento tem " +
-                            "sussurrado seu nome por todo o reino. Queria ter sua coragem... posso ajudar... tome, " +
-                            "fique com isso, pode ser útil, eu espero.");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoPlanicieVerdejante.txt");
 
                     heroi.setOuro(heroi.getOuro() + npc.getOuro());
 
@@ -278,14 +401,7 @@ public class Jogo {
                     System.out.println(npc.getNome() + " te deu " + npc.getOuro() + " moedas de ouro!");
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(heroi.getNome());
-                    System.out.println("Meus agradecimentos, "+ npc.getNome() +"... Pode me indicar o melhor caminho " +
-                            "para a Gruta do Orvalho?\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Você realmente tem coragem... para chegar até a Gruta do Orvalho não há o melhor " +
-                            "caminho, precisa escolher o que sua intuição mandar. Pode ir pelo  Campo das Papoulas ou " +
-                            "Campo das Rosas.Boa sorte!\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoPlanicieVerdejante02.txt");
 
                     System.out.println("\n-------------------------------------\n");
                     break;
@@ -293,19 +409,7 @@ public class Jogo {
                 case "Clareira das Lavandas":
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(heroi.getNome());
-                    System.out.println("Esse cheiro é relaxante. Parece um lugar calmo para descansar\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Olá, me chamo "+ npc.getNome() + "! mas pode me chamar de Lila. Você com certeza" +
-                            " deve ser o espirito escolhido. Os rumores tomam o reino todo sobre uma nova esperança.\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Ahh... Olá Lila... acho que esperam demais de mim...\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Deixe disso, o Jardim não faria essa escolha se não tivesse certeza. " +
-                            "Confie nessa força, na sua força. Aqui pode descansar e leve com você isso.\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoClareiraLavandas.txt");
 
                     heroi.setOuro(heroi.getOuro() + npc.getOuro());
 
@@ -313,43 +417,16 @@ public class Jogo {
                     System.out.println(npc.getNome() + " te deu " + npc.getOuro() + " moedas de ouro!");
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(heroi.getNome());
-                    System.out.println(npc.getNome() +"... Lila... Pode me indicar o melhor caminho para a Gruta do Orvalho?\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Claro que sim! A Gruta do Orvalho fica a perto daqui, só precisa passar pela " +
-                            "Clareira das Margaridas. Elas te mostrarão o caminho.\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println(npc.getNome() +" Que ótima notícia, meus agradecimentos Lila!\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Que o espirito do Jardim guie seu caminho!\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoClareiraLavandas02.txt");
 
                     break;
 
                 case "Clareira das Margaridas":
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(heroi.getNome());
-                    System.out.println("Aqui estamos, a Clareira das Margaridas, a gruta deve estar por perto.\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativa2B.txt");
 
-                    System.out.println(npc.getNome());
-                    System.out.println("Eiiiii... é você.... sim é você... não tem como não ser!\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Hum... olá... eu sou " + heroi.getNome()+".\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Deixe disso, sei quem você é, todos sabem. Estávamos a sua espera. Bromélia nos " +
-                            "avisou de sua chegada e disse para ajudarmos você a chegar a gruta.\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Sim, preciso encontrar a Gruta do Orvalho\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Levaremos você até lá. Também temos uma oferenda de boas energias a você, " +
-                            "acreditamos que será importante para continuar sua jornada.\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoClareiraMargaridas.txt");
 
                     Pocao pocao = new Pocao("Poção de Vida", 50, 10, 5);
                     heroi.addAoInventario(pocao);
@@ -361,74 +438,28 @@ public class Jogo {
                     System.out.println(heroi.getNome());
                     System.out.println("Meus agradecimentos... com certeza vai ajudar\n");
 
+                    ImprimirArquivo.esperarEnter();
+
                     System.out.println(npc.getNome());
                     System.out.println("Agora se apresse, a gruta te espera.\n");
+
+                    System.out.println("\n-------------------------------------\n");
                     break;
 
                 case "Vale Solar":
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(npc.getNome());
-                    System.out.println("Ora viva, sejam bem vindos ao Vale Solar. Eu sou "+ npc.getNome() +"\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Esse lugar é incrível. Sinto tanta energia...\n");
-
-                    NPCCompanheiro primeiroCompanheiro = salaAtual.getCompanheiros().get(0);
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("Os girassóis carregam a luz solar...!\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("E mais do que isso, somos capazes de partilhar essa luz e fortalecer bons amigos\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Definitivamente é incrivel, espero voltar aqui quando tudo acabar...\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("São sempre bem-vindos, o espirito do Jardim escolheu vocês então são todos amigos." +
-                            "por isso entrego a vocês um pouco de luz, vão precisar para terminar essa jornada\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoValeSolar.txt");
 
                     heroi.setVidaMax(heroi.getVidaMax() + 20);
                     heroi.setVidaAtual(heroi.getVidaMax());
-
-                    System.out.println("-------------------------------------\n");
-                    System.out.println(npc.getNome() + ", restaurou ao máximo sua vida e aumentou em 20 pontos!");
                     System.out.println("\n-------------------------------------\n");
-
-                    NPCCompanheiro segundoCompanheiro = salaAtual.getCompanheiros().get(1);
-                    System.out.println(segundoCompanheiro.getNome());
-                    System.out.println("Agradecemos pela ajuda." + npc.getNome() +" Precisamos continuar\n");
-
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("O próximo passo é o Pântano Venenoso, encontraremos a feiticeira!\n");
                     break;
 
                 case "Vale das Brisas":
                     System.out.println("\n-------------------------------------\n");
 
-                    primeiroCompanheiro = salaAtual.getCompanheiros().get(0);
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("Bem vindos ao Vale das Brisas. Aqui conseguimos upar nossa vida... " +
-                            "vamos precisar disso e sorte!\n");
-
-                    segundoCompanheiro = salaAtual.getCompanheiros().get(1);
-                    System.out.println(segundoCompanheiro.getNome());
-                    System.out.println("Deixe de falar besteira. Vamos conseguir!");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Eu quero acreditar que sim, mas toda ajuda é bem vinda, então que bom que estamos aqui.\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Heyyyyyy... são os grandes herois ou uma brisa minha? Brincadeira, Bromélia me " +
-                            "avisou sobre vocês. Eu sou," + npc.getNome() + ", sejam bem-vindos ao Vale das Brisas. " +
-                            "Aproveitem, relaxem e me digam no que posso ajudar.\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Queremos upar nossas vidas...\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("E quem não quer não é mesmo?! Brincadeira, estão no lugar certo, a brisa aqui eleva mesmo. " +
-                            "Bom, sabem que tem um preço né? Cada ponto custa 1 moeda de ouro!\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoValeBrisas.txt");
 
                     System.out.println("-------------------------------------\n");
                     System.out.println("Você tem " + heroi.getOuro() + " moedas de ouro.");
@@ -451,53 +482,14 @@ public class Jogo {
                     System.out.println("\n Sua vida e a dos seus companheiros aumentou em " + pontosVida + " pontos!");
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(npc.getNome());
-                    System.out.println("Já é, ta feito parceirinhos! Foi uma brisa boa. Voltem quando quiserem!\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoValeBrisas02.txt");
 
-                    System.out.println(segundoCompanheiro.getNome());
-                    System.out.println("Vamor seguir? Daqui podemos ir para o Pântano Venenoso.\n");
-
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("Ou podemos ir passar antes pelo Caminho Caladiano, é perigoso, mas " +
-                            "assim lutamos juntos antes enfrentar Beladona.\n");
                     break;
 
                 case "Vale das Orquídeas":
                     System.out.println("\n-------------------------------------\n");
 
-                    segundoCompanheiro = salaAtual.getCompanheiros().get(1);
-                    System.out.println(segundoCompanheiro.getNome());
-                    System.out.println("Chegamos ao Vale das Orquídeas. Aqui, "+ npc.getNome()+ ", pode nos ajudar a " +
-                            "aumentar nossa força, ela foi uma grande guerreira do reino\n");
-
-                    primeiroCompanheiro = salaAtual.getCompanheiros().get(0);
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("E por que ela não luta ao nosso lado?.\n");
-
-                    System.out.println(segundoCompanheiro.getNome());
-                    System.out.println("Em seu ultimo combate ela perdeu a visão.\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Então como ela vai conseguir nos ajudar?\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Ainda sem minha visão seria capaz de lutar melhor do que vocês. " +
-                            "Não preciso enxergar para saber que vocês precisam se fortalecerem, do contrário Beladona " +
-                            "e seus servos vão tirar mais do que visão de vocês.\n");
-
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("Nossa, que grande incentivo não é mesmo?.\n");
-
-                    System.out.println(segundoCompanheiro.getNome());
-                    System.out.println("Peço desculpas," + npc.getNome()+ " não dê ouvidos a isso. Estamos aqui pois " +
-                            "precisamos de sua ajuda. Precisamos de seu treinamento!\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("Eu sei que estão aqui para isso... Disse a Bromélia que faria meu melhor. " +
-                            "O treinamento tem um custo, para cada ponto de força vão precisar de 5 moedas de ouro.\n");
-
-                    System.out.println(heroi.getNome());
-                    System.out.println("Agradecemos, tenho comigo algumas moedas que juntei no caminho até aqui.\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoValeOrquideas.txt");
 
                     System.out.println("-------------------------------------\n");
 
@@ -522,70 +514,56 @@ public class Jogo {
 
                     System.out.println("\n-------------------------------------\n");
 
-                    System.out.println(heroi.getNome());
-                    System.out.println("Agradecemos o treinamento, " + npc.getNome() +"\n");
+                    imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoValeOrquideas02.txt");
 
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("Vamos seguir? Daqui podemos ir para o Pântano Venenoso.\n");
-
-                    System.out.println(segundoCompanheiro.getNome());
-                    System.out.println("Ou podemos ir para o Caminho Urtiguento, é perigoso, mas assim colocamos o treino em pratica.\n");
-
-                    System.out.println(npc.getNome());
-                    System.out.println("O espirito do Jardim e de todos os guerreiros que se foram, estão juntos com voces!Até mais...\n");
-
-                    System.out.println(primeiroCompanheiro.getNome());
-                    System.out.println("Ela é sempre animada assim?\n");
+                    System.out.println("\n-------------------------------------\n");
                     break;
             }
         }
     }
 
-    private void esperarEnter(Scanner scanner) {
-        System.out.println("Pressione Enter para continuar...");
-        scanner.nextLine();
-    }
-
     /**
      * Método para apresentar as salas que estão conectadas a sala atual
-     * @param scanner Entrada de dados de escolha
+     *
+     * @param scanner   Entrada de dados de escolha
      * @param salaAtual Identifica a sala que o heroi se encontra.
      */
     private void mostrarSalasProximas(Scanner scanner, Sala salaAtual) {
         List<Sala> salasProximas = salaAtual.getSalasProximas();
-        System.out.println("Salas disponíveis:");
+        System.out.println("Salas disponíveis:\n");
         for (int i = 0; i < salasProximas.size(); i++) {
             System.out.println((i + 1) + ". " + salasProximas.get(i).getNome());
         }
 
         // Escolha a próxima sala
-        System.out.print("Escolha para onde ir: ");
+        System.out.print("\nEscolha para onde ir: ");
         int escolhaSala = scanner.nextInt() - 1;
+        System.out.println("\n-------------------------");
         gerenciadorSalas.avancarParaProximaSala(escolhaSala);
     }
 
     /**
-     * Metodo que dá inicio ao jogo depois que o heroi foi criado.
+     * Metodo que dá início ao jogo depois que o heroi foi criado.
      */
     public void iniciarAventura() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Sua aventura começa agora!");
+        System.out.println("\nSua aventura começa agora!");
         System.out.println("-------------------------------\n");
 
         while (!gerenciadorSalas.estaNaSalaFinal()) {
             Sala salaAtual = gerenciadorSalas.getSalaAtual();
             heroi.resetarAtaqueEspecial();
 
-            System.out.println("Você está em: " + salaAtual.getNome());
-            System.out.println(salaAtual.getDescricao());
+            System.out.println("Você está em: " + salaAtual.getNome() + "\n");
 
             String[] opcoes = {"Explorar", "Próximas Salas", "Inventário", "Desvendar Sala(custo 25 moedas)"};
             salaAtual.setOpcoes(opcoes);
             salaAtual.mostrarOpcoes();
 
-            System.out.print("Escolha uma opção: ");
+            System.out.print("\nEscolha uma opção: ");
             int escolhaOpcao = scanner.nextInt();
+            System.out.println("------------------------------\n");
 
             switch (escolhaOpcao) {
                 case 1:
@@ -613,21 +591,63 @@ public class Jogo {
             }
         }
 
-        System.out.println("Parabéns! Você chegou ao Umbral Espinhento. Prepare-se para a batalha final!");
+        System.out.println("Você chegou ao Umbral Espinhento. Prepare-se para a grande batalha final!");
+        ImprimirArquivo imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
 
+        imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoUmbralEspinhento.txt");
 
         // Batalha final na sala final
         Sala salaFinal = gerenciadorSalas.getSalaAtual();
         List<NPCInimigo> inimigosFinais = salaFinal.getInimigos();
-        for (NPCInimigo inimigoFinal : inimigosFinais) {
-            boolean vitoriaFinal = gerenciadorCombate.realizarCombate(heroi, salaFinal.getCompanheiros(), inimigoFinal);
-            if (!vitoriaFinal) {
-                System.out.println("Você foi derrotado na batalha final. Fim de jogo.");
-                return;
-            }
+
+        if (inimigosFinais.size() > 1) {
+
+            NPCInimigo inimigoParaRemover = inimigosFinais.get(1);
+
+            salaFinal.removerInimigo(inimigoParaRemover);
         }
 
-        System.out.println("Você derrotou todos os inimigos! Parabéns, você completou a aventura com sucesso!");
-    }
+        for (NPCInimigo inimigoFinal : inimigosFinais) {
 
+            boolean vitoriaFinal = gerenciadorCombate.realizarCombate(heroi, salaFinal.getCompanheiros(), inimigoFinal);
+
+            // Verifica se o herói foi derrotado na batalha final
+            if (!vitoriaFinal) {
+                System.out.println("Foi como você disse irmão, me chamam de justiça sombria.\n " +
+                        " Então, agora o Jardim verá o meu lado sombrio até a completa extinção.");
+                return;
+            }
+
+            // Condição para o herói Bardo com "Semente Lirica" no inventário
+            else if (heroi.getCategoria().getClass().getSimpleName().equals("Bardo") && heroi.getInventario().contains("Semente Lirica")) {
+                imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativaFinal03.txt");
+            }
+
+            // Condições para outras escolhas de narrativa
+            else {
+                scanner = new Scanner(System.in);
+                System.out.println("Escolha seu destino final\n");
+                System.out.println("1. Ciclo natural");
+                System.out.println("2. Caminho da glória");
+                System.out.print("\nEscolha: ");
+
+                int opcao = scanner.nextInt();
+
+                switch (opcao) {
+                    case 1:
+                        imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativaFinal01.txt");
+                        break;
+                    case 2:
+                        imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativaFinal02.txt");
+                        break;
+                    default:
+                        imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativaFinal01.txt");
+                        break;
+                }
+            }
+
+            System.out.println("Fim de jornada" + heroi.getNome() +"!");
+        }
+
+    }
 }

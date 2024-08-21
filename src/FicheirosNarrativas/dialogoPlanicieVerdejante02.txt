@@ -1,0 +1,7 @@
+heroi.getNome()
+Meus agradecimentos, npc.getNome(). Pode me indicar o melhor caminho para a Gruta do Orvalho?@
+
+npc.getNome()
+Você realmente tem coragem... para chegar até a Gruta do Orvalho não há o melhor caminho,
+precisa escolher o que a sua intuição mandar.
+Pode ir pelo Campo das Papoulas ou Campo das Rosas. Boa sorte!@
