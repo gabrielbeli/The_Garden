@@ -13,7 +13,7 @@ public class NPC extends Entidade {
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
-        System.out.println("Ouro: " + ouro);
+        System.out.println("\uD83E\uDE99 Ouro: " + ouro);
     }
 
     /**

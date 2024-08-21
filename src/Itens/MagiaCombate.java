@@ -10,8 +10,8 @@ public class MagiaCombate extends Consumivel {
 
     @Override
     public void mostrarDetalhes() {
-        System.out.println("Magia Combate: " + getNome() + " | Preço: " + getPrecoOuro() + " | Ataque: " + ataqueInstantaneo);
-        System.out.println("Pode ser usado por: " + String.join(", ", getHeroisPermitidos()));
+        System.out.println("\uD83D\uDD2E Magia Combate: " + getNome() + " | Preço: " + getPrecoOuro() + " | Ataque: " + ataqueInstantaneo);
+        System.out.println("✅ Pode ser usado por: " + String.join(", ", getHeroisPermitidos()));
     }
 
     public int getAtaqueInstantaneo() {

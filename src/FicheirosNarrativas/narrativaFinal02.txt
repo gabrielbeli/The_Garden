@@ -1,7 +1,9 @@
-A batalha foi longa, mas o príncipe dourado saiu vitorioso.
-Com a ajuda da semente escolhida e a força dos companheiros, não sofreu o corte envenenado pela lâmina do Espinho.@
+@
 
-terceiroCompanheiro.getNome()
+A batalha foi longa, mas o príncipe dourado saiu vitorioso.
+Com a ajuda da semente escolhida e a força dos companheiros, não sofreu o corte envenenado pela lâmina do Espinho. 🪶@
+
+☀️ terceiroCompanheiro.getNome()
 Eu não queria isso irmão. Nunca quis te ferir, nunca quis o trono, mas ainda sim sou um príncipe, como você,
 não posso fugir das minhas responsabilidades. Se o reino precisa de mim, tenho que dar o meu melhor.@
 
@@ -10,34 +12,34 @@ A que preço irmão? Tirou a vida do seu irmão e do amor da vida dele...
 Espero que consiga governar mesmo carregando esse fardo.
 Adeus irmão...@
 
-heroi.getNome()
+🌱 heroi.getNome()
 E agora, o que faremos? Como voltamos para casa?@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 Eu preparei o velório do meu irmão e servirei o reino como manda o meu dever. Podem ficar no palácio,
 serão reconhecidos pela bravura de lutarem ao meu lado.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Mas o que vai contar ao reino?@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 Contarei o que eles precisam ouvir, a história de um rei.@
 
-segundoCompanheiro.getNome()
+🍃 segundoCompanheiro.getNome()
 heroi.getNome(), não temos como voltar para casa. Aqui agora é o nosso novo presente.
 Beladona não fará mal no futuro, o rei sobreviverá, então cumprimos a nossa missão.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Me desculpe por arrastá-los até aqui.@
 
-primeiroCompanheiro.getNome()
+🌺 primeiroCompanheiro.getNome()
 Não temos como fazer mais nada, já está feito não é mesmo? Então deixa de choro, sabíamos os riscos.
 Uma nova vida, como cavalheiros honrados. Quer mais do que isso?@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Vocês estão certos... vamos para o palácio.@
 
 Conta a história que no passado dois guerreiros travaram uma luta pelo trono.
 Dessa batalha, Dente de Leão, conhecido como príncipe dourado, subjugou o seu irmão, Espinho, conhecido como justiça sombria.
 Nessa luta, Dente de Leão pôde contar com a ajuda de jovens cavalheiros que mais tarde se tornaram grandes protetores do Jardim,
-e um deles, heroi.getNome(), a futura coroa.@
+e um deles, heroi.getNome(), a futura coroa.🪶@

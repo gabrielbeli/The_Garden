@@ -22,9 +22,9 @@ public abstract class Entidade {
      * Método utilizado para mostrar informações basicas do personagem, nome, vida e força...
      */
     public void mostrarDetalhes() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Vida: " + vidaAtual + "/" + vidaMax);
-        System.out.println("Força: " + forca);
+        System.out.println("\uD83D\uDFE2 Nome: " + nome);
+        System.out.println("❤\uFE0F\u200D\uD83D\uDD25 Vida: " + vidaAtual + "/" + vidaMax);
+        System.out.println("\uD83D\uDCAA Força: " + forca);
     }
 
     public Categoria getCategoria() {

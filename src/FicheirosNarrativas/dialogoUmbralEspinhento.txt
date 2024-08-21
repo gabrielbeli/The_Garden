@@ -1,90 +1,90 @@
-segundoInimigo.getNome()
+🪷 segundoInimigo.getNome()
 Meu príncipe, não sabe como me alegra vê-lo novamente.@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Beladona? Você esta... diferente.@
 
-segundoInimigo.getNome()
+🪷 segundoInimigo.getNome()
 Ouça, não tenho muito tempo...@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Beladona, pare. Você não pode mudar o passado.@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Mudar o passado? O que está acontecendo?@
 
-segundoInimigo.getNome()
+🪷 segundoInimigo.getNome()
 Você precisa ouvir, meu príncipe.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Ela é maluca, não escuta ela não.@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Quem são vocês? Você não é a minha Beladona.@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 Irmão, finalmente encontrei-te, precisamos conversar. Espere, quem são esses? Ela se parece com Beladona.@
 
-segundoInimigo.getNome()
+🪷 segundoInimigo.getNome()
 Espinho, escute, ele vai matar você...@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Está louca? Ele é meu irmão, jamais faria isso. Por que me procura irmão?@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 Esperava encontra-lo sozinho para conversar sobre o reino.@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Nunca se preocupou com isso, por que agora?@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 O conselho e Bromélia, acreditam que eu deva assumir o trono devido a minha ligação com o reino.@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 E desde quando você tem interesse no trono? Eu me preparo para isso há anos, trabalhando, enquanto você se diverte.@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 Irmão, entenda... o reino não o aprova... sentem que é demasiado duro... o chamam justiça sombria.@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 E a ti de príncipe dourado. Acha que simplesmente irei aceitar? A coroa me pertence, é minha por direito.@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 Não torne tudo mais difícil...@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Está me ameaçando?@
 
-segundoInimigo.getNome()
+🪷 segundoInimigo.getNome()
 Ele pretende te matar se resistir e vai conseguir se não me ouvir.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Parem os dois, vocês são irmãos, o reino de vocês juntos.@
 
-segundoInimigo.getNome()
+🪷 segundoInimigo.getNome()
 Eu não vou deixar que você o mate novamente!@
 
-segundoInimigo.getNome() parte para a cima do príncipe terceiroCompanheiro.getNome() que por instinto empunha a espada atravessando-a.@
+segundoInimigo.getNome() parte para a cima do príncipe terceiroCompanheiro.getNome() que por instinto empunha a espada atravessando-a.🪶@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 O que você fez?@
 
-terceiroCompanheiro.getNome()
+☀️ terceiroCompanheiro.getNome()
 Não... eu não tinha a intenção...@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Bela, você está bem?@
 
-segundoInimigo.getNome()
+🪷 segundoInimigo.getNome()
 Meu príncipe... meu amor...@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Você a matou... matou minha amada!@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Mas essa não é a sua Beladona, a sua ainda existe aqui...@
 
-inimigo.getNome()
+⚜️ inimigo.getNome()
 Eu não estava acreditando... segundoInimigo.getNome(), vinha me dizendo que algo estava estranho, que achava que Bromélia
 e o conselho pretendiam usurpar o trono. Mas eu sempre refutei essa ideia, acreditando que você mais do que ninguém estaria
 do meu lado irmão..., mas agora, você tirou a única coisa que importava mais do que a coroa.

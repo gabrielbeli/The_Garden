@@ -1,27 +1,26 @@
-npc.getNome()
+🌻npc.getNome()
 Ora viva, sejam bem vindos ao Vale Solar. Eu sou npc.getNome()@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Esse lugar é incrível. Sinto tanta energia...@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Os girassóis carregam a luz solar...!@
 
-npc.getNome()
-E mais do que isso, somos capazes de partilhar essa luz e fortalecer bons amigos@
+🌻 npc.getNome()
+E mais do que isso, conseguimos partilhar essa luz e fortalecer bons amigos@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Definitivamente é incrível, espero voltar aqui quando tudo acabar...@
 
-npc.getNome()
-São sempre bem-vindos, o espirito do Jardim escolheu vocês então são todos amigos. por isso entrego a vocês um pouco de luz, vão precisar para terminar essa jornada@
+🌻 npc.getNome()
+São sempre bem-vindos, o espirito do Jardim escolheu vocês, então, são todos amigos, por isso entrego um pouco de luz.
+Vão precisar para terminar essa jornada@
 
--------------------------------*------------------------------------
-npc.getNome() restaurou ao máximo sua vida e aumentou em 20 pontos!
--------------------------------*------------------------------------@
+npc.getNome() restaurou ao máximo sua vida e aumentou em 20 pontos!🪶@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Agradecemos pela ajuda, npc.getNome(). Precisamos continuar@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 O próximo passo é o Pântano Venenoso, encontraremos a feiticeira!@

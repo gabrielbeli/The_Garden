@@ -34,7 +34,7 @@ public class NPCInimigo extends NPC {
     }
 
     /**
-     * Metodo que subcreve o calculo de dano com base na força
+     * Metodo que subcreve o cálculo de dano com base na força
      * @return Valor da força do inimigo
      */
     @Override

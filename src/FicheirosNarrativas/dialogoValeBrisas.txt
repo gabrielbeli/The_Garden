@@ -1,20 +1,20 @@
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Bem vindos ao Vale das Brisas. Aqui conseguimos upar a nossa vida... vamos precisar disso e sorte!@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Deixe de falar besteira. Vamos conseguir!@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Eu quero acreditar que sim, mas toda ajuda é bem-vinda, então que bom que estamos aqui.@
 
-npc.getNome()
+🌿npc.getNome()
 Heyyyyyy... são os grandes herois ou uma brisa minha? Brincadeira, Bromélia avisou-me sobre vocês.
 Eu sou, npc.getNome(), sejam bem-vindos ao Vale das Brisas.
 Aproveitem, relaxem e digam-me no que posso ajudar.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Queremos upar nossas vidas...@
 
-npc.getNome()
+🌿npc.getNome()
 E quem não quer não é mesmo?! Brincadeira, estão no lugar certo, a brisa aqui eleva mesmo.
 Bom, sabem que tem um preço né? Cada ponto custa 1 moeda de ouro!@

@@ -22,7 +22,9 @@ public class Som {
             clip.open(audioStream);
 
             // Toca o som
-            clip.start();
+            //clip.start();
+
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
 
             // Espera o som terminar de tocar
             //clip.drain();

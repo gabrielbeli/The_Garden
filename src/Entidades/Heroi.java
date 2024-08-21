@@ -4,7 +4,7 @@ import java.util.Scanner;
 import Entidades.Categorias.Categoria;
 import Entidades.NPC.NPC;
 import Entidades.NPC.NPCInimigo;
-import Itens.ArmaPrincipal;
+import Itens.ArtefatoPrincipal;
 import Itens.Consumivel;
 import Itens.MagiaCombate;
 import Itens.Pocao;
@@ -14,7 +14,7 @@ public abstract class Heroi extends Entidade {
 
     private int nivel;
     private int ouro;
-    private ArmaPrincipal armaPrincipal;
+    private ArtefatoPrincipal armaPrincipal;
     private ArrayList<Consumivel> inventario;
     private int experiencia;
     private boolean ataqueEspecialUsado;
@@ -40,7 +40,7 @@ public abstract class Heroi extends Entidade {
     public boolean atacar(NPC inimigo) {
         int dano = this.calcularDano();
         inimigo.receberDano(dano);
-        System.out.println(this.getNome() + " ataca " + inimigo.getNome() + " causando " + dano + " de dano!");
+        System.out.println("\n ⚡\uFE0F " + this.getNome() + " ataca " + inimigo.getNome() + " causando " + dano + " de dano!");
         return inimigo.getVidaAtual() <= 0;
     }
 
@@ -52,10 +52,10 @@ public abstract class Heroi extends Entidade {
         if (podeUsarAtaqueEspecial()) {
             int danoEspecial = calcularDanoEspecial();
             inimigo.receberDano(danoEspecial);
-            System.out.println(this.getNome() + " causou " + danoEspecial + " de dano especial em " + inimigo.getNome());
+            System.out.println("\n\uD83D\uDCA5 " +this.getNome() + " causou " + danoEspecial + " de dano especial em " + inimigo.getNome());
             this.ataqueEspecialUsado = true;
         } else {
-            System.out.println("Você já usou o ataque especial nesta sala.");
+            System.out.println("⛔ Você já usou o ataque especial nesta sala.");
         }
     }
 
@@ -92,16 +92,16 @@ public abstract class Heroi extends Entidade {
                     this.setVidaAtual(this.getVidaAtual() + pocao.getVidaCurar());
                     this.setForca(this.getForca() + pocao.getAumentoForca());
                     inventario.remove(item);
-                    System.out.println("Você usou " + pocao.getNome() + "!");
+                    System.out.println("Você usou " + pocao.getNome() + "! \uD83E\uDDEA");
                     return;
                 }
             }
         }
-        System.out.println("Você não tem nenhuma poção no inventário!");
+        System.out.println("⛔ Você não tem nenhuma poção no inventário!");
     }
 
     /**
-     * Método para usar a o item magia durante o combate
+     * Método para usar o item magia durante o combate
      * @param inimigo
      */
     public void usarMagiaCombate(NPCInimigo inimigo) {
@@ -110,12 +110,12 @@ public abstract class Heroi extends Entidade {
                 if (item instanceof MagiaCombate magiaCombate) {
                     inimigo.setVidaAtual(inimigo.getVidaAtual() - magiaCombate.getAtaqueInstantaneo());
                     inventario.remove(item);
-                    System.out.println("Você usou " + magiaCombate.getNome() + "!");
+                    System.out.println("Você usou " + magiaCombate.getNome() + "! \uD83E\uDE94");
                     return;
                 }
             }
         }
-        System.out.println("Você não tem nenhuma poção no inventário!");
+        System.out.println("⛔ Você não tem nenhuma poção no inventário!");
     }
 
     /**
@@ -127,17 +127,17 @@ public abstract class Heroi extends Entidade {
         if (this.experiencia >= 50 * this.nivel) {
             this.nivel++;
             this.experiencia -= 50 * (this.nivel - 1);
-            System.out.println("Você subiu para o nível " + this.nivel + "!");
+            System.out.println("\n\uD83D\uDD3A Você subiu para o nível " + this.nivel + "! \uD83D\uDD3A");
         }
     }
 
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
-        System.out.println("Nível: " + nivel);
-        System.out.println("Ouro: " + ouro);
-        System.out.println("Categoria: " + (getCategoria() != null ? getCategoria().getClass().getSimpleName() : "Não definida"));
-        System.out.println("Arma Principal: " + (armaPrincipal != null ? armaPrincipal.getNome() : "Nenhuma"));
+        System.out.println("\uD83C\uDF31 Nível: " + nivel);
+        System.out.println("\uD83E\uDE99 Ouro: " + ouro);
+        System.out.println("\uD83E\uDE9E Categoria: " + (getCategoria() != null ? getCategoria().getClass().getSimpleName() : "Não definida"));
+        System.out.println("\uD83D\uDD31 Artefato Principal: " + (armaPrincipal != null ? armaPrincipal.getNome() : "Nenhuma"));
     }
 
     /**
@@ -151,7 +151,7 @@ public abstract class Heroi extends Entidade {
 
     /**
      * Metódo que configura o calculo de dano que o heroi causa no inimigo
-     * @return Retorna o valor do dano causado no inimigo de acordo com a categoria e arma principal do heroi.
+     * @return Retorna o valor do dano causado no inimigo conforme a categoria e arma principal do heroi.
      */
     public int calcularDano() {
         Categoria categoria = getCategoria();
@@ -186,29 +186,29 @@ public abstract class Heroi extends Entidade {
 
         // Verifica se o inventário está vazio
         if (inventario.isEmpty()) {
-            System.out.println("O seu inventário está vazio.");
+            System.out.println("\nO seu inventário está vazio. \uD83D\uDEA8");
             return;
         }
 
         // Exibe o inventário
-        System.out.println("Itens no inventário:");
+        System.out.println("\uD83C\uDF92 Itens no inventário:");
         for (int i = 0; i < inventario.size(); i++) {
             Consumivel item = inventario.get(i);
-            System.out.println((i + 1) + ". " + item.getNome());
+            System.out.println((i + 1) + ". \uD83D\uDD38 " + item.getNome());
         }
 
         // Escolha de item
-        System.out.print("Escolha um item pelo número (0 para cancelar): ");
+        System.out.print("\n\uD83D\uDD79\uFE0F Escolha um item pelo número (0 para cancelar): ");
         int escolha = scanner.nextInt();
 
         if (escolha == 0) {
-            System.out.println("Você optou por não usar nenhum item.");
+            System.out.println("\nVocê optou por não usar nenhum item. \uD83D\uDED1");
             return;
         }
 
         // Verifica se a escolha é válida
         if (escolha < 1 || escolha > inventario.size()) {
-            System.out.println("Escolha inválida.");
+            System.out.println("\n⛔ Escolha inválida.");
             return;
         }
 
@@ -221,10 +221,10 @@ public abstract class Heroi extends Entidade {
             if (emCombate) {
                 this.usarMagiaCombate(inimigo);
             } else {
-                System.out.println("Magias de combate só podem ser usadas durante o combate.");
+                System.out.println("\nMagias de combate só podem ser usadas durante o combate. \uD83D\uDEA8");
             }
         } else {
-            System.out.println("Item não utilizável diretamente.");
+            System.out.println("\n⛔ Item não utilizável diretamente.");
         }
     }
 
@@ -240,11 +240,11 @@ public abstract class Heroi extends Entidade {
         this.ouro = Math.max(0, ouro);
     }
 
-    public ArmaPrincipal getArmaPrincipal() {
+    public ArtefatoPrincipal getArmaPrincipal() {
         return armaPrincipal;
     }
 
-    public void setArmaPrincipal(ArmaPrincipal armaPrincipal) {
+    public void setArmaPrincipal(ArtefatoPrincipal armaPrincipal) {
         this.armaPrincipal = armaPrincipal;
     }
 

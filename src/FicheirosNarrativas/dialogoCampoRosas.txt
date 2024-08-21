@@ -1,15 +1,15 @@
-inimigo.getNome()
+🌹 inimigo.getNome()
 Vejam irmãs, a semente escolhida deve a audácia de adentrar o nosso território.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Eu quero apenas chegar até a Gruta do Orvalho. E como sabem quem sou?@
 
-inimigo.getNome()
+🌹 inimigo.getNome()
 Não deveria se preocupar se sabemos quem você é e sim se você sabe quem é você.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Por que todos parecem questionar se eu sei quem sou?@
 
-inimigo.getNome()
+🌹 inimigo.getNome()
 A resposta é clara, porque você não sabe. Mas se você não sabe nem mesmo quem é, como espera governar o Jardim?...
 Não importa, isso jamais acontecerá. A sua jornada acaba agora.@

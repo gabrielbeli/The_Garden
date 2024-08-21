@@ -12,8 +12,8 @@ public class Pocao extends Consumivel {
 
     @Override
     public void mostrarDetalhes() {
-        System.out.println("Poção: " + getNome() + " | Preço: " + getPrecoOuro() + " | Vida + : " + vidaCurar + " | Força + : " + aumentoForca);
-        System.out.println("Pode ser usado por: " + String.join(", ", getHeroisPermitidos()));
+        System.out.println("\uD83E\uDDEA Poção: " + getNome() + " | Preço: " + getPrecoOuro() + " | Vida + : " + vidaCurar + " | Força + : " + aumentoForca);
+        System.out.println("✅ Pode ser usado por: " + String.join(", ", getHeroisPermitidos()));
     }
 
     public int getVidaCurar() {

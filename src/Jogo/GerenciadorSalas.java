@@ -4,7 +4,7 @@ import Entidades.NPC.NPC;
 import Entidades.NPC.NPCCompanheiro;
 import Entidades.NPC.NPCInimigo;
 import Entidades.Vendedor;
-import Itens.ArmaPrincipal;
+import Itens.ArtefatoPrincipal;
 import Itens.MagiaCombate;
 import Itens.Pocao;
 
@@ -69,18 +69,18 @@ public class GerenciadorSalas {
         NPCInimigo espinho = new NPCInimigo("Espinho", 500, 50, 1000);
 
         // Criando Itens
-        ArmaPrincipal tesouraAncestral = new ArmaPrincipal("Tesoura Ancestral", 200, 25, 50);
-        ArmaPrincipal tesouraPrimordial = new ArmaPrincipal("Tesoura Primordial", 100, 10, 20);
-        ArmaPrincipal tesouraMaster = new ArmaPrincipal("Tesoura Master", 150, 20, 30);
-        ArmaPrincipal cajadoAncestral = new ArmaPrincipal("Cajado Ancestral", 200, 25, 50);
-        ArmaPrincipal cajadoPrimordial = new ArmaPrincipal("Cajado Primordial", 100, 10, 15);
-        ArmaPrincipal cajadoMaster = new ArmaPrincipal("Cajado Master", 150, 20, 30);
-        ArmaPrincipal bandolimAncestral = new ArmaPrincipal("Bandolim Ancestral", 200, 25, 50);
-        ArmaPrincipal bandolimPrimordial = new ArmaPrincipal("Bandolim Primordial", 100, 10, 15);
-        ArmaPrincipal bandolimMaster = new ArmaPrincipal("Bandolim Master", 150, 20, 30);
-        ArmaPrincipal arcoAncestral = new ArmaPrincipal("Arco Ancestral", 200, 25, 50);
-        ArmaPrincipal arcoPrimordial = new ArmaPrincipal("Arco Primordial", 100, 10, 15);
-        ArmaPrincipal arcoMaster = new ArmaPrincipal("Arco Master", 150, 20, 30);
+        ArtefatoPrincipal tesouraAncestral = new ArtefatoPrincipal("Tesoura Ancestral", 200, 25, 50);
+        ArtefatoPrincipal tesouraPrimordial = new ArtefatoPrincipal("Tesoura Primordial", 100, 10, 20);
+        ArtefatoPrincipal tesouraMaster = new ArtefatoPrincipal("Tesoura Master", 150, 20, 30);
+        ArtefatoPrincipal cajadoAncestral = new ArtefatoPrincipal("Cajado Ancestral", 200, 25, 50);
+        ArtefatoPrincipal cajadoPrimordial = new ArtefatoPrincipal("Cajado Primordial", 100, 10, 15);
+        ArtefatoPrincipal cajadoMaster = new ArtefatoPrincipal("Cajado Master", 150, 20, 30);
+        ArtefatoPrincipal bandolimAncestral = new ArtefatoPrincipal("Bandolim Ancestral", 200, 25, 50);
+        ArtefatoPrincipal bandolimPrimordial = new ArtefatoPrincipal("Bandolim Primordial", 100, 10, 15);
+        ArtefatoPrincipal bandolimMaster = new ArtefatoPrincipal("Bandolim Master", 150, 20, 30);
+        ArtefatoPrincipal arcoAncestral = new ArtefatoPrincipal("Arco Ancestral", 200, 25, 50);
+        ArtefatoPrincipal arcoPrimordial = new ArtefatoPrincipal("Arco Primordial", 100, 10, 15);
+        ArtefatoPrincipal arcoMaster = new ArtefatoPrincipal("Arco Master", 150, 20, 30);
         Pocao pocaoFertilizante = new Pocao("Poção Fertilizante", 40, 25, 0);
         Pocao pocaoFertilizantePlus = new Pocao("Poção Fertilizante Plus", 60, 50, 0);
         Pocao pocaoFertilizanteSuper = new Pocao("Poção Fertilizante Super", 80, 75, 0);
@@ -92,10 +92,10 @@ public class GerenciadorSalas {
         MagiaCombate sementeLirica = new MagiaCombate("Semente Lirica", 150, 0);
 
         // Criando listas dos Itens
-        List<ArmaPrincipal> armaPrincipalGuerreiro = List.of(tesouraAncestral, tesouraMaster, tesouraPrimordial);
-        List<ArmaPrincipal> armaPrincipalDruida = List.of(cajadoAncestral, cajadoMaster, cajadoPrimordial);
-        List<ArmaPrincipal> armaPrincipalBardo = List.of(bandolimAncestral, bandolimMaster, bandolimPrimordial);
-        List<ArmaPrincipal> armaPrincipalRanger = List.of(arcoAncestral, arcoMaster, arcoPrimordial);
+        List<ArtefatoPrincipal> armaPrincipalGuerreiro = List.of(tesouraAncestral, tesouraMaster, tesouraPrimordial);
+        List<ArtefatoPrincipal> armaPrincipalDruida = List.of(cajadoAncestral, cajadoMaster, cajadoPrimordial);
+        List<ArtefatoPrincipal> armaPrincipalBardo = List.of(bandolimAncestral, bandolimMaster, bandolimPrimordial);
+        List<ArtefatoPrincipal> armaPrincipalRanger = List.of(arcoAncestral, arcoMaster, arcoPrimordial);
         List<Pocao> pocoesVida = List.of(pocaoFertilizante, pocaoFertilizanteAncestral, pocaoFertilizanteMaster, pocaoFertilizantePlus, pocaoFertilizanteSuper);
         List<MagiaCombate> magiaCombates = List.of(poDeFogo, poDeGelo, grandePoda, sementeLirica);
 
@@ -130,16 +130,16 @@ public class GerenciadorSalas {
         polegarVermelho.addItens(magiaCombates);
 
         // Permissões das armas
-        for (ArmaPrincipal arma : armaPrincipalGuerreiro) {
+        for (ArtefatoPrincipal arma : armaPrincipalGuerreiro) {
             arma.addHeroiPermitido("Guerreiro");
         }
-        for (ArmaPrincipal arma : armaPrincipalDruida) {
+        for (ArtefatoPrincipal arma : armaPrincipalDruida) {
             arma.addHeroiPermitido("Druida");
         }
-        for (ArmaPrincipal arma : armaPrincipalBardo) {
+        for (ArtefatoPrincipal arma : armaPrincipalBardo) {
             arma.addHeroiPermitido("Bardo");
         }
-        for (ArmaPrincipal arma : armaPrincipalRanger) {
+        for (ArtefatoPrincipal arma : armaPrincipalRanger) {
             arma.addHeroiPermitido("Ranger");
         }
         for (Pocao pocao : pocoesVida) {
@@ -184,6 +184,7 @@ public class GerenciadorSalas {
         caminhoUrtiguento.addCompanheiros(companheirosJornada);
         caminhoCaladiano.addInimigos(inimigosCaminhoCaladiano);
         caminhoCaladiano.addCompanheiros(companheirosJornada);
+        lagoaDosCristais.addCompanheiros(companheirosJornada);
         pantanoVenenoso.addInimigos(inimigosPantanoVenenoso);
         pantanoVenenoso.addCompanheiros(companheirosJornada);
         umbralEspinhento.addInimigos(inimigosUmbralEspinhento);

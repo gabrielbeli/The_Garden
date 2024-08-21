@@ -1,54 +1,52 @@
----------------------------------------------------------------------------------------------------------------------@
 
 🌵 vendedor.getNome()
 Ora viva, clientes... em que posso ajudar?@
 
-heroi.getNome()
+🌟 heroi.getNome()
 Polegar Vermelho, somos nós.@
 
 🌵 vendedor.getNome()
 Que ótimo, e eu sou eu.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Você e Bromélia nos reuniu para ajudar a semente escolhida.@
 
 🌵 vendedor.getNome()
 A semente escolhida? Estão a falar do príncipe dourado?@
 
-heroi.getNome()
+🌟 heroi.getNome()
 Não, o príncipe dourado está...@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 [nome escolhido], não acho que esteja.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Como assim, está doida garota?@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Beladona fez algo antes de morrer, usou alguma magia e se o Polegar Vermelho falou do principe dourado...
 Ela disse que a resposta não era o futuro e sim...@
 
-heroi,getNome()
+🌟 heroi.getNome()
 O passado. Ela nos mandou de volta no tempo. Mas o que ela ganharia com isso?@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Se voltamos no tempo, podemos impedir a morte do rei.@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Se fizermos isso, tudo muda, mas nunca existiremos.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Mas teremos cumprido a missão de salvar o Jardim.@
 
-heroi.getNome()
+🌟 heroi.getNome()
 Não percebem? Beladona não queria nos mandar através do tempo.
 Ela viajou pelo tempo, mas fomos carregados juntos. Beladona pretende mudar o passado salvando o príncipe Espinho.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 E para isso vai ela matar o rei Dente de Leão.@
 
 🌵 vendedor.getNome()
 Que conversa doida foi essa minha gente? Vocês passaram pelo Vale das Brisas não foi?
 Mas afinal, vão querer comprar algo ou não?@
 
-----------------------------------------------------------------------------------------------------------------------

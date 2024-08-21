@@ -1,17 +1,17 @@
-inimigo.getNome()
+👾 inimigo.getNome()
 Devo admitir, estou surpreso de que tenham chegado tão longe. Mas a vossa jornada acaba nesse ponto.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Ou será a sua existência traidora.@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Não precisamos lutar, ainda há tempo de nos unirmos e encontrar a paz.@
 
-inimigo.getNome()
+👾 inimigo.getNome()
 HAHAHA... deve ser mesmo louca garota. E se existiu um traidor, pirralho, esse foi o falso rei Dente de Leão.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Por que ele seria um traidor?@
 
-inimigo.getNome()
+👾 inimigo.getNome()
 Chega de conversa, vamos terminar com isso!@

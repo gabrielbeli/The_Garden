@@ -1,18 +1,18 @@
-inimigo.getNome()
+👾 inimigo.getNome()
 Então os boatos eram verdadeiros! Realmente existem loucos que acreditam que podem derrotar a nossa rainha.
 Eu só não esperava que fossem tão medíocres.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Cuidado com o que fala traidor.@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Não precisamos lutar, ainda há tempo de nos unirmos e encontrar a paz.@
 
-inimigo.getNome()
+👾 inimigo.getNome()
 HAHAHA... deve ser mesmo louca garota. E se existiu um traidor, pirralho, esse foi o falso rei Dente de Leão.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Por que ele seria um traidor?@
 
-inimigo.getNome()
+👾 inimigo.getNome()
 Não importa, vocês não sobreviverão a partir daqui.@

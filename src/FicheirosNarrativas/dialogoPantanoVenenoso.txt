@@ -1,41 +1,41 @@
-inimigo.getNome()
+🪷 inimigo.getNome()
 Enfim a semente escolhida pelo espírito do Jardim. É um prazer finalmente conhecer o ser destinado a me deter.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Por que você está fazendo tudo isso? Se o Jardim deixar de existir, você também deixará.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Vamos acabar logo com isso...@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Se acalme Leave, Beladona não é um inimigo qualquer.@
 
-inimigo.getNome()
+🪷 inimigo.getNome()
 Muito bem garota, pelo menos um de vocês tem sensatez. Quanto a sua pergunta semente...
 Sei que Bromélia deve ter dito muitas coisas ao meu respeito, mas não fui eu que comecei tudo isso... estou apenas terminando.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Sei que foi o príncipe Espinho...@
 
-inimigo.getNome()
+🪷 inimigo.getNome()
 Espinho jamais escolheria destruir o Jardim, era justo, era o rei ideal.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Mas não o rei escolhido!@
 
-inimigo.getNome()
+🪷 inimigo.getNome()
 CALADO! Insolente. O príncipe Espinho foi traído pelo seu próprio irmão.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Traído? Como?@
 
-inimigo.getNome()
+🪷 inimigo.getNome()
 A feiticeira. Dente de Leão procurou Bromélia para usurpar o trono que era por direito do primogénito.@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Mas é o Jardim quem escolhe o rei, ele escolheu o príncipe dourado.@
 
-inimigo.getNome()
+🪷 inimigo.getNome()
 Isso é o que ela quer que todos pensem..., mas nada disso importa mais.
 Espinho queria um reino justo para todos, até mesmo para os seres considerados escuros.
 Mas tiraram isso dele, tiraram isso de nós, então não resta mais nada, além da extinção.@

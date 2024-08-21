@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Jogo jogo = new Jogo();
 
-        tocarSom("src/Sons/Descent_Gris.wav");
         jogo.criarPersonagem();
+        tocarSom("src/Sons/Descent_Gris.wav");
         jogo.iniciarAventura();
     }
 }

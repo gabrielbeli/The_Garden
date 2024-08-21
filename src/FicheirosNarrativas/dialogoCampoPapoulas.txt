@@ -1,18 +1,18 @@
-heroi.getNome()
+🌱 heroi.getNome()
 Esse lugar é lindo. Sabia que existia muito além dos arredores do palácio, mas tanta beleza...@
 
-inimigo.getNome()
+🌷 inimigo.getNome()
 Veja quem chega nas nossas terras. Um espirito livre escolhido pelo próprio Jardim.
 Fique a vontade, faremos o melhor para se sentir em casa. Porque não descansa pouco, vai precisar de energia para sua jornada.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 O que está acontecendo? Estou ficando com sono...@
 
-inimigo.getNome()
+🌷 inimigo.getNome()
 É apenas um presente para você, aproveite e em breve poderá encontrar Beladona... nossa rainha!@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Você disse... rainha?... não… ela não... espere, é isso, um feitiço, essa beleza distraíram-me do pólen.@
 
-inimigo.getNome()
+🌷 inimigo.getNome()
 Então você percebeu... muito bem, faremos da forma difícil.@

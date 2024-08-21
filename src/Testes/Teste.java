@@ -7,7 +7,7 @@ import Entidades.NPC.NPC;
 import Entidades.NPC.NPCCompanheiro;
 import Entidades.NPC.NPCInimigo;
 import Entidades.Vendedor;
-import Itens.ArmaPrincipal;
+import Itens.ArtefatoPrincipal;
 import Itens.MagiaCombate;
 import Itens.Pocao;
 import Jogo.Sala;
@@ -27,7 +27,7 @@ public class Teste {
         Vendedor maquinaAutomatica = new Vendedor("Maquina");
         NPC batman = new NPC("Batman", 10000, 10000, 1000000000);
 
-        ArmaPrincipal notebook = new ArmaPrincipal("Notebook", 100, 10, 15);
+        ArtefatoPrincipal notebook = new ArtefatoPrincipal("Notebook", 100, 10, 15);
         Pocao kinderBueno = new Pocao("Kinder Bueno", 180, 20, 10);
         MagiaCombate aulaPoo = new MagiaCombate("Aula POO", 100, 50);
 

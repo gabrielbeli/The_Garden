@@ -76,32 +76,32 @@ public class Sala {
      * Método para verificar as informações da sala como: companheiros, inimigos, vendedor;
      */
     public void mostrarDetalhes() {
-        System.out.println("Sala: " + nome);
+        System.out.println("\uD83D\uDEA9 Sala: " + nome);
         System.out.println(descricao);
 
         if (!inimigos.isEmpty()) {
-            System.out.println("Inimigos nesta sala:");
+            System.out.println("\uD83D\uDC80 Inimigos nesta sala:");
             for (NPCInimigo inimigo : inimigos) {
                 System.out.println("- " + inimigo.getNome());
             }
         }
 
         if (!companheiros.isEmpty()) {
-            System.out.println("Companheiros nesta sala:");
+            System.out.println("\uD83E\uDD1D Companheiros nesta sala:");
             for (NPCCompanheiro companheiro : companheiros) {
                 System.out.println("- " + companheiro.getNome());
             }
         }
 
         if (!npcsComuns.isEmpty()) {
-            System.out.println("NPCs nesta sala:");
+            System.out.println("\uD83E\uDEB4 Outros nesta sala:");
             for (NPC npc : npcsComuns) {
                 System.out.println("- " + npc.getNome());
             }
         }
 
         if (vendedor != null) {
-            System.out.println("Vendedor presente na sala: " + vendedor.getNome());
+            System.out.println("\uD83C\uDF35 Vendedor presente na sala: " + vendedor.getNome());
         }
     }
 
@@ -109,7 +109,7 @@ public class Sala {
      * Método que auxilia a mostrar as opções da sala
      */
     public void mostrarOpcoes() {
-        System.out.println("Opções:");
+        System.out.println("\uD83E\uDEB6 Opções:");
         for (int i = 0; i < opcoes.length; i++) {
             System.out.println((i + 1) + ". " + opcoes[i]);
         }

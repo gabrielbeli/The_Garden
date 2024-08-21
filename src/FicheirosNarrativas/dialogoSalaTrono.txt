@@ -1,35 +1,31 @@
-npc.getNome()
+✨ npc.getNome()
 Como posso continuar? A minha energia aos poucos está se esvaindo com o reino.
 Sinto Beladona a ganhar força. Não tenho mais como limitar os poderes dela e alimentar com luz a raízes sagradas.@
 
-----------------------*Um barulho estranho*---------------------- @
+Um barulho estranho...
 
-npc.getNome()          
+✨ npc.getNome()
 Quem está aí? Apareça!@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Me desculpe vossa alteza, não quis incomodar. Fiquei responsável pela poda da sala.@
 
-npc.getNome()
+✨ npc.getNome()
 Não há o que desculpar. Não me atentei ao dia de poda… só precisava pensar por um momento... vou o deixar fazer o seu trabalho.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Me falta apenas a poda próxima ao trono vossa alteza, devo terminar em breve e deixar a sala livre.@
 
-npc.getNome()
+✨ npc.getNome()
 Não se preocupe, deixarei os aposentos... agradecida por seus serviços.@
 
--------------------------------------------------------------------------------------------------------------
 Quando Bromélia deixava a sala, uma luz tomou o recinto. A feiticeira imediatamente virou-se e não acreditava.
-O trono estava livre, os galhos e ramos formavam uma passagem, o espirito do Jardim fez a sua escolha.
--------------------------------------------------------------------------------------------------------------@
+O trono estava livre, os galhos e ramos formavam uma passagem, o espirito do Jardim fez a sua escolha.🪶@
 
-heroi.getNome()
+🌱 heroi.getNome()
 O que está acontecendo? Eu juro que não fiz nada, apenas me aproximei para fazer a poda... 
 É a minha primeira vez nessa sala… isso é normal?@
 
-npc.getNome()
+✨ npc.getNome()
 Definitivamente não, e é isso que torna extraordinariamente incrível. Finalmente temos uma chance de salvar o reino. 
 Precisamos conversar e depois você precisa ir até a Vendinha Cactos...@
-
------------------------------------- @

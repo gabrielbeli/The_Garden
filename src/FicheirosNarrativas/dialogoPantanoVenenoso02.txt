@@ -1,24 +1,24 @@
-inimigo.getNome()
+🪷 inimigo.getNome()
 Não... isso não pode acabar assim... eu preciso ter a minha vingança, por mim... por ele.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Não há mais o que você possa fazer. Entenda, você mesmo disse que espinho queria o melhor para o Jardim...
 Juntos podemos fazer esse melhor.@
 
-inimigo.getNome()
+🪷 inimigo.getNome()
 NÃO! Não existe Jardim sem o Espinho... espere... é isso.
 Eu sempre pensei no futuro do Jardim, quando a resposta, na verdade, está no passado.@
 
-primeiroCompanheiro.getNome()
+🍃 primeiroCompanheiro.getNome()
 Ela pirou de vez.@
 
-segundoCompanheiro.getNome()
+🌺 segundoCompanheiro.getNome()
 Acho que ela está planejando alguma coisa, temos que tomar cuidado.@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Vamos, Beladona, podemos consertar tudo isso!@
 
-inimigo.getNome()
+🪷 inimigo.getNome()
 Eu vou consertar tudo isso, mas do meu jeito, ou melhor, do jeito dele.
 ENCANTATEEEEEEEEEEEEEE.@
 

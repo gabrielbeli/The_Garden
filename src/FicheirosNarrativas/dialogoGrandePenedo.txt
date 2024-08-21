@@ -1,11 +1,11 @@
-heroi.getNome()
+🌱 heroi.getNome()
 Nunca estive nesse vale antes... Bromélia me alertou sobre os lacaios da Beladona, devo tomar cuidado.@
 
-inimigo.getNome()
+🍄‍🟫 inimigo.getNome()
 Quem teve a coragem de adentrar um território tomado pela rainha Beladona?@
 
-heroi.getNome()
+🌱 heroi.getNome()
 Rainha? Beladona é uma feiticeira maligna que está destruindo o reino@
 
-inimigo.getNome()
+🍄‍🟫 inimigo.getNome()
 Suas palavras serão o seu fim! Ninguém deve desafiar o poder da rainha! Acabaremos com sua vida aqui.@
