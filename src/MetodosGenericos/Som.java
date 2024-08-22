@@ -13,7 +13,6 @@ public class Som {
 
     public static void tocarSom(String caminhoDoArquivo) {
         try {
-            // Carrega o arquivo de som
             File arquivoSom = new File(caminhoDoArquivo);
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(arquivoSom);
 

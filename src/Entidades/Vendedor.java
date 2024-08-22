@@ -70,7 +70,7 @@ public class Vendedor {
         }
 
         if (heroi.getOuro() < item.getPrecoOuro()) {
-            System.out.println("Ouro insuficiente para comprar este item. \uD83D\uDEA8");
+            System.out.println("\nOuro insuficiente para comprar este item. \uD83D\uDEA8");
             return false;
         }
 

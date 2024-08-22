@@ -109,7 +109,7 @@ public class Sala {
      * Método que auxilia a mostrar as opções da sala
      */
     public void mostrarOpcoes() {
-        System.out.println("\uD83E\uDEB6 Opções:");
+        System.out.println("\uD83E\uDEB6 Opções:\n");
         for (int i = 0; i < opcoes.length; i++) {
             System.out.println((i + 1) + ". " + opcoes[i]);
         }

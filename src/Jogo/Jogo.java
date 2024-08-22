@@ -14,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
+import static MetodosGenericos.Som.tocarSom;
+
 public class Jogo {
     private Heroi heroi;
     private GerenciadorSalas gerenciadorSalas;
@@ -30,7 +32,6 @@ public class Jogo {
     public void criarPersonagem() {
         Scanner scanner = new Scanner(System.in);
 
-        // Escolha do modo de jogo
         System.out.println("\n\uD83C\uDFAE Modo de jogo\n");
         System.out.println("1. \uD83D\uDD05 Ensolarado (350 moedas \uD83E\uDE99)");
         System.out.println("2. \uD83C\uDF29\uFE0F Nebuloso (250 moedas \uD83E\uDE99)");
@@ -41,19 +42,15 @@ public class Jogo {
 
         System.out.println("\n\uD83E\uDDEE Você tem " + ouroInicial + " de ouro para distribuir entre Vida e Força.\n");
 
-        // Distribuição de pontos de vida (1 ponto de vida custa 1 moeda)
         int vidaMax = definirValor("vida", 100, scanner, ouroInicial, 1);
         ouroInicial -= vidaMax;
 
-        // Distribuição de pontos de força (1 ponto de força custa 10 moedas)
         int forca = definirValor("força", 10, scanner, ouroInicial, 10);
         ouroInicial -= forca * 10;
 
-        // Escolha do nome do herói
         System.out.print("\n\uD83C\uDF31 Escolha o nome da sua semente: ");
         String nomeHeroi = scanner.next();
 
-        // Criação do objeto heroi
         heroi = new HeroiBase(nomeHeroi, vidaMax, forca);
         heroi.setOuro(ouroInicial);
 
@@ -73,7 +70,9 @@ public class Jogo {
      * @return Valor determinado pelo jogador
      */
     private int definirValor(String atributo, int maximo, Scanner scanner, int ouroDisponivel, int custoPorUnidade) {
+
         int valor;
+
         while (true) {
             System.out.print("❤\uFE0F\uD83D\uDCAA Defina o valor para " + atributo + " (1 a " + maximo + "): ");
             valor = scanner.nextInt();
@@ -92,14 +91,16 @@ public class Jogo {
      * @param scanner Entrada de dados
      */
     private void definirCategoriaHeroi(Scanner scanner) {
-        System.out.println("\uD83E\uDE9E Categorias");
-        System.out.println("1. \uD83D\uDDE1\uFE0F Guerreiro");
-        System.out.println("2. \uD83E\uDE95 Bardo");
+
+        System.out.println("\uD83E\uDE9E Quem você gostaria de ser\n");
+        System.out.println("1. \uD83D\uDDE1\uFE0F Guerreiro(a)");
+        System.out.println("2. \uD83C\uDFF9 Ranger");
         System.out.println("3. \uD83D\uDCA0 Druida");
-        System.out.println("4. \uD83C\uDFF9 Ranger");
+        System.out.println("4. \uD83E\uDE95 Bardo(a)");
 
         System.out.print("\n\uD83D\uDD79\uFE0F Faça sua escolha: ");
         int escolhaCategoria = scanner.nextInt();
+
         Categoria categoriaSelecionada;
 
         switch (escolhaCategoria) {
@@ -107,13 +108,13 @@ public class Jogo {
                 categoriaSelecionada = new Guerreiro();
                 break;
             case 2:
-                categoriaSelecionada = new Bardo();
+                categoriaSelecionada = new Ranger();
                 break;
             case 3:
                 categoriaSelecionada = new Druida();
                 break;
             case 4:
-                categoriaSelecionada = new Ranger();
+                categoriaSelecionada = new Bardo();
                 break;
             default:
                 System.out.println("Categoria inválida. Definindo como padrão (Guerreiro).");
@@ -135,7 +136,7 @@ public class Jogo {
             System.out.println("Você já explorou esta sala. Não há mais nada para descobrir aqui.");
             return;
         }
-        // Caso a sala ainda não tenha sido explorada
+
         salaAtual.setExplorada(true);
 
         if (salaAtual.getTipo() == TipoSala.INICIAL) {
@@ -179,6 +180,10 @@ public class Jogo {
 
                     imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
 
+                    if (heroi.getCategoria() == null) {
+                        definirCategoriaHeroi(scanner);
+                    }
+
                     imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoGrutaOrvalho.txt");
 
                     vendedor.interagir(heroi);
@@ -190,6 +195,10 @@ public class Jogo {
 
                 case "Lagoa dos Cristais":
 
+                    if (heroi.getCategoria() == null) {
+                        definirCategoriaHeroi(scanner);
+                    }
+
                     imprimirArquivo = new ImprimirArquivo(heroi, gerenciadorSalas, gerenciadorCombate);
 
                     imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativa04.txt");
@@ -197,7 +206,6 @@ public class Jogo {
                     imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoLagoaCristais.txt");
 
                     vendedor.interagir(heroi);
-                    System.out.println("\n------------------------------------------------------------------------------\n");
 
                     System.out.println("\uD83C\uDF31 " + heroi.getNome());
                     System.out.println("Polegar, você sabe onde podemos encontrar o príncipe Espinho?\n");
@@ -497,7 +505,6 @@ public class Jogo {
             System.out.println((i + 1) + ". \uD83D\uDEA9 " + salasProximas.get(i).getNome());
         }
 
-        // Escolha a próxima sala
         System.out.print("\n\uD83E\uDDED Escolha para onde ir: ");
         int escolhaSala = scanner.nextInt() - 1;
         System.out.println("\n-------------------------");
@@ -547,7 +554,7 @@ public class Jogo {
                     salaAtual.mostrarDetalhes();
                     break;
                 case 5:
-                    System.out.println("\uD83C\uDF31 Como estou...");
+                    System.out.println("\uD83C\uDF31 Como estou...\n");
                     heroi.mostrarDetalhes();
                     break;
 
@@ -595,6 +602,8 @@ public class Jogo {
             }
 
              if (heroi.getCategoria().getClass().getSimpleName().equals("Bardo") && possuiSementeLirica) {
+
+                 tocarSom("src/Sons/Semente-Magica.wav");
                 imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativaFinal03.txt");
             }
 

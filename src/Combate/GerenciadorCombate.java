@@ -28,35 +28,28 @@ public class GerenciadorCombate {
 
         while (heroi.getVidaAtual() > 0 && inimigo.getVidaAtual() > 0) {
 
-            // Mostrar status antes de cada turno
             exibirStatusCombate(heroi, companheiros, inimigo);
 
-            // Turno do herói
             turnoHeroi(heroi, inimigo);
 
-            // Verifica se o inimigo foi derrotado
             if (inimigo.getVidaAtual() <= 0) {
                 inimigoDerrotado = true;
                 break;
             }
 
-            // Turno dos companheiros
             for (NPCCompanheiro companheiro : companheiros) {
                 if (companheiro.getVidaAtual() > 0) {
                     turnoCompanheiro(companheiro, inimigo);
                 }
             }
 
-            // Verifica se o inimigo foi derrotado após o turno dos companheiros
             if (inimigo.getVidaAtual() <= 0) {
                 inimigoDerrotado = true;
                 break;
             }
 
-            // Turno do inimigo
             turnoInimigo(inimigo, heroi, companheiros);
 
-            // Verifica se o herói foi derrotado após o turno do inimigo
             if (heroi.getVidaAtual() <= 0) {
                 break;
             }
@@ -65,7 +58,7 @@ public class GerenciadorCombate {
         if (inimigoDerrotado) {
             heroi.ganharExperiencia(50);
             heroi.setOuro(heroi.getOuro() + inimigo.getOuro());
-            System.out.println("\n" + heroi.getNome() + " derrotou " + inimigo.getNome() + " e ganhou 50 de experiência e " + inimigo.getOuro() + " de ouro!");
+            System.out.println("\n\uD83C\uDF31 " + heroi.getNome() + " derrotou " + inimigo.getNome() + " e ganhou 50 de experiência e " + inimigo.getOuro() + " de ouro!\n");
         }
 
         exibirStatusFinal(heroi, companheiros, inimigo);
@@ -127,7 +120,7 @@ public class GerenciadorCombate {
      */
     private void turnoHeroi(Heroi heroi, NPCInimigo inimigo) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("⚔\uFE0F Opções:");
+        System.out.println("⚔\uFE0F Opções:\n");
         System.out.println("1. ⚡\uFE0F Ataque Normal");
         System.out.println("2. \uD83D\uDCA5 Ataque Especial");
         System.out.println("3. \uD83C\uDF92 Acessar Iventário");

@@ -27,7 +27,7 @@ public class ImprimirArquivo {
     public void imprimirNarrativa(String caminho) throws FileNotFoundException {
         Map<String, String> substituicoes = new HashMap<>();
 
-        // Adiciona as substituições ao mapa
+        // Aqui adiciono as substituições ao mapa
         substituicoes.put("heroi.getNome()", heroi.getNome());
         if (!salaAtual.getNPCsComuns().isEmpty()) {
             substituicoes.put("npc.getNome()", salaAtual.getNPCsComuns().get(0).getNome());
@@ -57,20 +57,20 @@ public class ImprimirArquivo {
         while (fileScanner.hasNextLine()) {
             String linha = fileScanner.nextLine();
 
-            // Substitui as chaves pelo valor correspondente
+            // Substituindo as chaves pelo valor correspondente
             for (Map.Entry<String, String> entrada : substituicoes.entrySet()) {
                 linha = linha.replace(entrada.getKey(), entrada.getValue());
             }
 
-            // Adiciona a linha ao parágrafo
+            // Adiciono a linha ao parágrafo
             paragrafo.append(linha).append("\n");
 
-            // Se o parágrafo termina com "@", imprime-o e espera o utilizador pressionar Enter
+            // Se o parágrafo termina com "@", imprimo e espero o utilizador pressionar Enter
             if (linha.contains("@")) {
                 String paragrafoFormatado = paragrafo.toString().replace("@", "");
                 System.out.println(paragrafoFormatado.trim());
                 esperarEnter();
-                paragrafo.setLength(0); // Limpa o StringBuilder para o próximo parágrafo
+                paragrafo.setLength(0); // Limpando o StringBuilder para o próximo parágrafo
             }
         }
 
@@ -83,7 +83,7 @@ public class ImprimirArquivo {
     }
 
     public static void esperarEnter() {
-        System.out.println("\n------------------------------------------------------------------------------------------------------------- Continuar(aperte enter)");
+        System.out.println("\n------------------------------------------------------------------------------------------------------------- Continuar(aperte enter) \uD83D\uDC47");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }

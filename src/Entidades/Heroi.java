@@ -40,7 +40,7 @@ public abstract class Heroi extends Entidade {
     public boolean atacar(NPC inimigo) {
         int dano = this.calcularDano();
         inimigo.receberDano(dano);
-        System.out.println("\n ⚡\uFE0F " + this.getNome() + " ataca " + inimigo.getNome() + " causando " + dano + " de dano!");
+        System.out.println("\n⚡\uFE0F " + this.getNome() + " ataca " + inimigo.getNome() + " causando " + dano + " de dano!");
         return inimigo.getVidaAtual() <= 0;
     }
 
@@ -191,7 +191,7 @@ public abstract class Heroi extends Entidade {
         }
 
         // Exibe o inventário
-        System.out.println("\uD83C\uDF92 Itens no inventário:");
+        System.out.println("\uD83C\uDF92 Itens no inventário:\n");
         for (int i = 0; i < inventario.size(); i++) {
             Consumivel item = inventario.get(i);
             System.out.println((i + 1) + ". \uD83D\uDD38 " + item.getNome());
@@ -202,7 +202,7 @@ public abstract class Heroi extends Entidade {
         int escolha = scanner.nextInt();
 
         if (escolha == 0) {
-            System.out.println("\nVocê optou por não usar nenhum item. \uD83D\uDED1");
+            System.out.println("\n\uD83D\uDED1 Você optou por não usar nenhum item.\n");
             return;
         }
 
