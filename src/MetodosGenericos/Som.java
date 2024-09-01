@@ -1,35 +1,38 @@
 package MetodosGenericos;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
-
 public class Som {
+    private static Clip clip;
 
+    /**
+     * Método usado para tocar a trilha sonora
+     *
+     * @param caminhoDoArquivo gerencia o local que se enontra o arquivo de som
+     */
     public static void tocarSom(String caminhoDoArquivo) {
         try {
             File arquivoSom = new File(caminhoDoArquivo);
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(arquivoSom);
 
-            // Obtém o clip de som
-            Clip clip = AudioSystem.getClip();
+            clip = AudioSystem.getClip();
             clip.open(audioStream);
-
-            // Toca o som
-            //clip.start();
-
             clip.loop(Clip.LOOP_CONTINUOUSLY);
 
-            // Espera o som terminar de tocar
-            //clip.drain();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             System.out.println("Erro ao tocar som: " + e.getMessage());
         }
     }
-}
 
+    /**
+     * Método usado para parar o looping da trilha e possibilitar novas trilhas.
+     */
+    public static void pararSom() {
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+            clip.close();
+        }
+    }
+}

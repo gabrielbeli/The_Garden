@@ -21,28 +21,28 @@ public class GerenciadorSalas {
     }
 
     /**
-     * Método que instancia as salas, npcs, vendedor items, faz suas conexões
+     * Método que instancia as salas, npcs, vendedor items, faz a suas conexões
      */
     private void inicializarSalas() {
 
         // Criando todas as salas do jogo
-        Sala salaDoTrono = new Sala("Sala do trono", TipoSala.INICIAL, "A grande sala do trono");
-        Sala vendinhaCactos = new Sala("Vendinha Cactos", TipoSala.VENDEDOR, "Você está na Vendinha Cactos, onde sua jornada começa.");
-        Sala planiciesVerdejantes = new Sala("Planícies Verdejantes", TipoSala.EVENTO, "Você chega às vastas Planícies Verdejantes.");
-        Sala grandePenedo = new Sala("Grande Penedo", TipoSala.COMBATE, "Você se depara com o imponente Grande Penedo.");
-        Sala campoDasPapoulas = new Sala("Campo das Papoulas", TipoSala.COMBATE, "Você chega ao Campo das Papoulas, um lugar colorido e vibrante.");
-        Sala campoDasRosas = new Sala("Campo das Rosas", TipoSala.COMBATE, "Você chega ao Campo das Rosas, conhecido pelo seu aroma doce.");
-        Sala clareiraDasLavandas = new Sala("Clareira das Lavandas", TipoSala.EVENTO, "Você chega à Clareira das Lavandas, um local tranquilo e perfumado.");
-        Sala clareiraDasMargaridas = new Sala("Clareira das Margaridas", TipoSala.EVENTO, "Você chega à Clareira das Margaridas, com um campo vasto de flores.");
-        Sala grutaDoOrvalho = new Sala("Gruta do Orvalho", TipoSala.VENDEDOR, "Você entra na Gruta do Orvalho, um local úmido e misterioso.");
-        Sala valeSolar = new Sala("Vale Solar", TipoSala.EVENTO, "Você chega ao Vale Solar, iluminado e quente.");
-        Sala valeDasOrquideas = new Sala("Vale das Orquídeas", TipoSala.EVENTO, "Você chega ao Vale das Orquídeas, repleto de flores exóticas.");
-        Sala valeDasBrisas = new Sala("Vale das Brisas", TipoSala.EVENTO, "Você chega ao Vale das Brisas, um lugar fresco e arejado.");
-        Sala caminhoUrtiguento = new Sala("Caminho Urtiguento", TipoSala.COMBATE, "Você chega ao Caminho Urtiguento, cheio de plantas espinhosas.");
-        Sala caminhoCaladiano = new Sala("Caminho Caladiano", TipoSala.COMBATE, "Você chega ao Caminho Caladiano, cheio de plantas venenosas.");
-        Sala pantanoVenenoso = new Sala("Pântano Venenoso", TipoSala.COMBATE, "Você entra no Pântano Venenoso, perigoso e traiçoeiro.");
-        Sala lagoaDosCristais = new Sala("Lagoa dos Cristais", TipoSala.VENDEDOR, "Você chega à Lagoa dos Cristais, um lugar de águas claras e misteriosas.");
-        Sala umbralEspinhento = new Sala("Umbral Espinhento", TipoSala.FINAL, "Você chega ao Umbral Espinhento, o destino final de sua jornada.");
+        Sala salaDoTrono = new Sala("Sala do trono", TipoSala.INICIAL, "Na grande sala do trono reina o silêncio a espera de um dia um nova coroa surgir");
+        Sala vendinhaCactos = new Sala("Vendinha Cactos", TipoSala.VENDEDOR, "Vendinha Cactos, uma loja que prestas serviços ao reino há gerações.");
+        Sala planiciesVerdejantes = new Sala("Planícies Verdejantes", TipoSala.EVENTO, "Uma grande planicie coberta do mais puro verde, uma lembrança de um reino feliz.");
+        Sala grandePenedo = new Sala("Grande Penedo", TipoSala.COMBATE, "Uma região ao nordeste do reino, onde um grande penedo ostenta a imponência de um reino.");
+        Sala campoDasPapoulas = new Sala("Campo das Papoulas", TipoSala.COMBATE, "O encantamento das belessimas papoulas é um visão viciante.");
+        Sala campoDasRosas = new Sala("Campo das Rosas", TipoSala.COMBATE, "A quem diga que o aroma das rosas chega além das terras do Jardim, ultrapasando reinos .");
+        Sala clareiraDasLavandas = new Sala("Clareira das Lavandas", TipoSala.EVENTO, "Na clareira das lavandas, viajantes adoram descançam enquanto sentem a calmaria no ar.");
+        Sala clareiraDasMargaridas = new Sala("Clareira das Margaridas", TipoSala.EVENTO, "Sempre alegre, as margaridas, tornam essa clareira um lugar reconfortante.");
+        Sala grutaDoOrvalho = new Sala("Gruta do Orvalho", TipoSala.VENDEDOR, "Existem lugares de mistérios ancestrais no reino, a gruta do orvalho é um deles.");
+        Sala valeSolar = new Sala("Vale Solar", TipoSala.EVENTO, "Sentir a toque quente do sol e a sua mais pura energia que emana dos girassois, dizem que até mesmo de noite.");
+        Sala valeDasOrquideas = new Sala("Vale das Orquídeas", TipoSala.EVENTO, "Nessa região a sudoeste do reino, grandes cavalheiros foram forjados pelas orquideas..");
+        Sala valeDasBrisas = new Sala("Vale das Brisas", TipoSala.EVENTO, "Se busca um momento para relaxar e se divertir, o vale das brisas é capaz de te fazer sonhar acordado");
+        Sala caminhoUrtiguento = new Sala("Caminho Urtiguento", TipoSala.COMBATE, "Cuidado para não se espetar, essa area requer agilidade e jovens guerreiros");
+        Sala caminhoCaladiano = new Sala("Caminho Caladiano", TipoSala.COMBATE, "Uma zona do reino que requer coragem e determinação, aqui viajantes devem ter atenção");
+        Sala pantanoVenenoso = new Sala("Pântano Venenoso", TipoSala.COMBATE, "Um lugar de exilamento e temido por todo o reino.");
+        Sala lagoaDosCristais = new Sala("Lagoa dos Cristais", TipoSala.VENDEDOR, "Considerado um local magico, onde magia ancestral flui pela água atravez dos cristais.");
+        Sala umbralEspinhento = new Sala("Umbral Espinhento", TipoSala.FINAL, "O umbral espinhento, no passado foi um grande observatório de estudos e pesquisas do reino.");
 
         // Criando NPCs comuns
         NPC bromelia = new NPC("Bromélia", 100, 10, 50);
@@ -84,12 +84,12 @@ public class GerenciadorSalas {
         Pocao pocaoFertilizante = new Pocao("Poção Fertilizante", 40, 25, 0);
         Pocao pocaoFertilizantePlus = new Pocao("Poção Fertilizante Plus", 60, 50, 0);
         Pocao pocaoFertilizanteSuper = new Pocao("Poção Fertilizante Super", 80, 75, 0);
-        Pocao pocaoFertilizanteMaster = new Pocao("Poção Fertilizante Master", 100, 100, 0);
+        Pocao pocaoFertilizanteMaster = new Pocao("Poção Fertilizante Master", 100, 100, 5);
         Pocao pocaoFertilizanteAncestral = new Pocao("Poção Fertilizante Ancestral", 200, 150, 5);
-        MagiaCombate poDeFogo = new MagiaCombate("Pó de Fogo", 50, 30);
-        MagiaCombate poDeGelo = new MagiaCombate("Pó de Gelo", 50, 30);
+        MagiaCombate poDeFogo = new MagiaCombate("Pó de Fogo", 100, 30);
+        MagiaCombate poDeGelo = new MagiaCombate("Pó de Gelo", 100, 30);
         MagiaCombate grandePoda = new MagiaCombate("Grande Poda", 100, 50);
-        MagiaCombate sementeLirica = new MagiaCombate("Semente Lirica", 150, 0);
+        MagiaCombate sementeLirica = new MagiaCombate("Semente Lirica", 100, 30);
 
         // Criando listas dos Itens
         List<ArtefatoPrincipal> armaPrincipalGuerreiro = List.of(tesouraAncestral, tesouraMaster, tesouraPrimordial);

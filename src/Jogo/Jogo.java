@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
+import static MetodosGenericos.Som.pararSom;
 import static MetodosGenericos.Som.tocarSom;
 
 public class Jogo {
@@ -88,6 +89,7 @@ public class Jogo {
     /**
      * Metodo para definir a categoria do heroi;
      * Guerreiro | Druida | Bardo | Ranger
+     *
      * @param scanner Entrada de dados
      */
     private void definirCategoriaHeroi(Scanner scanner) {
@@ -128,6 +130,7 @@ public class Jogo {
 
     /**
      * Método que implementa a exploração conforme o tipo de sala.
+     *
      * @param salaAtual Identifica a sala que o heroi se encontra.
      * @param scanner   Entrada de dados
      */
@@ -382,7 +385,7 @@ public class Jogo {
 
                     heroi.setOuro(heroi.getOuro() + npc.getOuro());
 
-                    System.out.println("☘\uFE0F "+ npc.getNome() + " te deu " + npc.getOuro() + " moedas de ouro! \uD83E\uDE99");
+                    System.out.println("☘\uFE0F " + npc.getNome() + " te deu " + npc.getOuro() + " moedas de ouro! \uD83E\uDE99");
                     System.out.println("\n---------------------------------------------------------------------------------------------------------------------\n");
 
                     imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoPlanicieVerdejante02.txt");
@@ -446,7 +449,7 @@ public class Jogo {
                         System.out.print("Entrada inválida. Insira um valor entre 0 e " + heroi.getOuro() + ": ");
                         pontosVida = scanner.nextInt();
                     }
-                    heroi.setVidaMax(heroi.getVidaMax()+ pontosVida);
+                    heroi.setVidaMax(heroi.getVidaMax() + pontosVida);
                     heroi.setVidaAtual(heroi.getVidaMax());
                     heroi.setOuro(heroi.getOuro() - pontosVida);
 
@@ -495,6 +498,7 @@ public class Jogo {
 
     /**
      * Método para apresentar as salas que estão conectadas a sala atual
+     *
      * @param scanner   Entrada de dados de escolha
      * @param salaAtual Identifica a sala que o heroi se encontra.
      */
@@ -601,13 +605,11 @@ public class Jogo {
                 }
             }
 
-             if (heroi.getCategoria().getClass().getSimpleName().equals("Bardo") && possuiSementeLirica) {
-
-                 tocarSom("src/Sons/Semente-Magica.wav");
+            if (heroi.getCategoria().getClass().getSimpleName().equals("Bardo") && possuiSementeLirica) {
+                pararSom();
+                tocarSom("src/Sons/Semente-Magica.wav");
                 imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/narrativaFinal03.txt");
-            }
-
-            else {
+            } else {
                 scanner = new Scanner(System.in);
                 System.out.println("\uD83D\uDD30 Destinos finais \uD83D\uDD30\n");
                 System.out.println("1. \uD83D\uDDDD\uFE0F Ciclo natural");
@@ -629,7 +631,7 @@ public class Jogo {
                 }
             }
 
-            System.out.println("\uD83E\uDDE1 Fim de jornada " + heroi.getNome() +"! \uD83C\uDF31");
+            System.out.println("\uD83E\uDDE1 Fim de jornada " + heroi.getNome() + "! \uD83C\uDF31");
         }
 
     }

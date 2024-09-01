@@ -184,13 +184,13 @@ public abstract class Heroi extends Entidade {
     public void acessarInventario(boolean emCombate, NPCInimigo inimigo) {
         Scanner scanner = new Scanner(System.in);
 
-        // Verifica se o inventário está vazio
+        // Verificando se o inventário está vazio
         if (inventario.isEmpty()) {
             System.out.println("\nO seu inventário está vazio. \uD83D\uDEA8");
             return;
         }
 
-        // Exibe o inventário
+        // Exibo o inventário
         System.out.println("\uD83C\uDF92 Itens no inventário:\n");
         for (int i = 0; i < inventario.size(); i++) {
             Consumivel item = inventario.get(i);
@@ -206,7 +206,7 @@ public abstract class Heroi extends Entidade {
             return;
         }
 
-        // Verifica se a escolha é válida
+        // Verifico se a escolha é válida
         if (escolha < 1 || escolha > inventario.size()) {
             System.out.println("\n⛔ Escolha inválida.");
             return;
@@ -214,7 +214,7 @@ public abstract class Heroi extends Entidade {
 
         Consumivel itemEscolhido = inventario.get(escolha - 1);
 
-        // Verifica o tipo de item escolhido e realiza a ação apropriada
+        // Verifico o tipo de item escolhido e realizo a ação apropriada
         if (itemEscolhido instanceof Pocao) {
             this.usarPocao();
         } else if (itemEscolhido instanceof MagiaCombate) {
