@@ -228,6 +228,17 @@ public abstract class Heroi extends Entidade {
         }
     }
 
+    /**
+     * Método que cria uma cópia do heroi para reutilizar numa nova partida
+     * @return Copia do heroi e seus atributos no estado inicial
+     */
+    public Heroi copiar() {
+        Heroi copia = new HeroiBase(this.getNome(), this.getVidaMax(), this.getForca());
+        copia.setVidaAtual(this.getVidaAtual());
+        copia.setOuro(this.getOuro());
+        return copia;
+    }
+
     public int getExperiencia() {
         return this.experiencia;
     }

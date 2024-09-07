@@ -9,7 +9,6 @@ public class Som {
 
     /**
      * Método usado para tocar a trilha sonora
-     *
      * @param caminhoDoArquivo gerencia o local que se enontra o arquivo de som
      */
     public static void tocarSom(String caminhoDoArquivo) {
@@ -35,4 +34,5 @@ public class Som {
             clip.close();
         }
     }
+
 }

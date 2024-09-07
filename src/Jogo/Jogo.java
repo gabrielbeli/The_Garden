@@ -21,6 +21,7 @@ public class Jogo {
     private Heroi heroi;
     private GerenciadorSalas gerenciadorSalas;
     private GerenciadorCombate gerenciadorCombate;
+    private Heroi heroiOriginal;
 
     public Jogo() {
         this.gerenciadorSalas = new GerenciadorSalas();
@@ -54,6 +55,8 @@ public class Jogo {
 
         heroi = new HeroiBase(nomeHeroi, vidaMax, forca);
         heroi.setOuro(ouroInicial);
+
+        heroiOriginal = heroi.copiar();
 
         System.out.println("\n\uD83C\uDF31 Semente criada com sucesso!");
         System.out.println("-------------------------------");
@@ -236,7 +239,7 @@ public class Jogo {
                         if (!vitoria) {
                             System.out.println("\uD83C\uDF44\u200D\uD83D\uDFEB " + inimigo.getNome());
                             System.out.println("Tão insignificante! O que é a coragem sem força? Vida longa a Beladona!\n");
-                            return;
+                            pararAventura();
                         } else {
                             System.out.println("\uD83C\uDF44\u200D\uD83D\uDFEB " + inimigo.getNome());
                             System.out.println("Você encontrará seu fim, nossa rainha vencerá, morremos honrados...\n");
@@ -260,7 +263,7 @@ public class Jogo {
                         if (!vitoria) {
                             System.out.println("\uD83C\uDF37 " + inimigo.getNome());
                             System.out.println("Nossa rainha ficará encantada com a beleza de nossa conquista. Vida longa a Beladona.\n");
-                            return;
+                            pararAventura();
                         } else {
                             System.out.println("\uD83C\uDF37 " + inimigo.getNome());
                             System.out.println("Maldição! Veja o que fez com a gente...estamos murchando...como pode destruir algo tão belo como nós...\n");
@@ -286,7 +289,7 @@ public class Jogo {
                         if (!vitoria) {
                             System.out.println("\uD83C\uDF39 " + inimigo.getNome());
                             System.out.println("Você falhou! Mas isso já era esperado de alguém que nem mesmo sabem quem é. Vida longa à Beladona.\n");
-                            return;
+                            pararAventura();
                         } else {
                             System.out.println("\uD83C\uDF39 " + inimigo.getNome());
                             System.out.println("Impossível! Você nem mesmo sabe quem você é e nos somos as Rosas, a elite das flores,\n" +
@@ -311,7 +314,7 @@ public class Jogo {
                         if (!vitoria) {
                             System.out.println("\uD83D\uDC7E  " + inimigo.getNome());
                             System.out.println("Eu disse que não importava. Vocês encontraram seu fim criaturas medíocres. Vida longa a Beladona.\n");
-                            return;
+                            pararAventura();
                         } else {
                             System.out.println("\uD83D\uDC7E  " + inimigo.getNome());
                             System.out.println("Como? Vocês não passam de seres medíocres. Como pude ser derrotado assim?\n " +
@@ -336,7 +339,7 @@ public class Jogo {
                         if (!vitoria) {
                             System.out.println("\uD83D\uDC7E  " + inimigo.getNome());
                             System.out.println("Vocês até que tentaram, um belo tira-gosto. Vida longa a Beladona.\n");
-                            return;
+                            pararAventura();
                         } else {
                             System.out.println("\uD83D\uDC7E  " + inimigo.getNome());
                             System.out.println("Pelo visto subestimei vocês, mas não importa, minha rainha terminara esse trabalho, boa morte...\n");
@@ -363,7 +366,7 @@ public class Jogo {
                             System.out.println("\uD83E\uDEB7 " + inimigo.getNome());
                             System.out.println("Eu disse a Bromélia que era uma questão de tempo, que ela não conseguiria me manter aqui para sempre.\n " +
                                     "Parece que ela depositou suas últimas energias nessa tentativa patética. Agora é hora de terminar o que comecei!\n");
-                            return;
+                            pararAventura();
                         } else {
                             imprimirArquivo.imprimirNarrativa("src/FicheirosNarrativas/dialogoPantanoVenenoso02.txt");
                             return;
@@ -593,7 +596,7 @@ public class Jogo {
                 System.out.println("⚜\uFE0F " + inimigoFinal.getNome());
                 System.out.println("Foi como você disse irmão, me chamam de justiça sombria.\n " +
                         " Então, agora o Jardim verá o meu lado sombrio até a completa extinção.");
-                return;
+                pararAventura();
             }
 
 
@@ -635,4 +638,30 @@ public class Jogo {
         }
 
     }
+
+    /**
+     * Metodo para jogo depois que o heroi é derrotado e da opção de jogar novamente.
+     */
+    public void pararAventura() throws FileNotFoundException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\uD83E\uDEB4 Deseja renascer sua semente? (1 - Sim / 2 - Não): ");
+        int opcao = scanner.nextInt();
+
+        if (opcao == 1) {
+            System.out.print("\n\uD83C\uDF31 Deseja usar a mesma semente ou criar uma nova? (1 - Mesma / 2 - Nova): ");
+            int opcaoHeroi = scanner.nextInt();
+
+            if (opcaoHeroi == 1) {
+                heroi = heroiOriginal.copiar();
+                iniciarAventura();
+            } else {
+                criarPersonagem();
+                iniciarAventura();
+            }
+        } else {
+            System.out.println("\n₊˚ʚ \uD83C\uDF31 ₊˚✧ﾟ. Aventura encerrada! Até a prórxima. ₊˚ʚ \uD83C\uDF31 ₊˚✧ﾟ.");
+            System.exit(0);
+        }
+    }
+
 }

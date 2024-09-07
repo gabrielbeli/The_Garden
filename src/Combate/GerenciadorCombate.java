@@ -95,19 +95,19 @@ public class GerenciadorCombate {
      */
     private void exibirStatusFinal(Heroi heroi, List<NPCCompanheiro> companheiros, NPCInimigo inimigo) {
         System.out.println("\n-------------------- Status Final ---------------------\n");
-        System.out.println("Herói: " + heroi.getNome() + " | Vida: " + heroi.getVidaAtual() + "/" + heroi.getVidaMax() + " | Ouro: " + heroi.getOuro() + " | Experiência: " + heroi.getExperiencia());
+        System.out.println("\uD83C\uDF31 Semente: " + heroi.getNome() + " | Vida: " + heroi.getVidaAtual() + "/" + heroi.getVidaMax() + " | Ouro: " + heroi.getOuro() + " | Experiência: " + heroi.getExperiencia());
 
         if (!companheiros.isEmpty()) {
-            System.out.println("Companheiros:");
+            System.out.println("\n\uD83E\uDD1D Companheiros:");
             for (NPCCompanheiro companheiro : companheiros) {
                 System.out.println("\n" + companheiro.getNome() + " | Vida: " + companheiro.getVidaAtual() + "/" + companheiro.getVidaMax());
             }
         }
 
         if (heroi.getVidaAtual() <= 0) {
-            System.out.println("O Jardin será extinto! \uD83D\uDE2D");
+            System.out.println("\nO Jardin será extinto! \uD83D\uDE2D");
         } else if (inimigo.getVidaAtual() <= 0) {
-            System.out.println("\uD83D\uDCE3 Grande vitória \uD83D\uDCE3");
+            System.out.println("\n\uD83D\uDCE3 Grande vitória \uD83D\uDCE3");
         }
 
         System.out.println("--------------------------------------------------------\n");

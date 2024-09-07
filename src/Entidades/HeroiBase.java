@@ -26,4 +26,9 @@ public class HeroiBase extends Heroi {
         return super.getForca();
     }
 
+    @Override
+    public HeroiBase copiar() {
+        return (HeroiBase) super.copiar();
+    }
+
 }
